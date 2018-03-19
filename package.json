@@ -1,0 +1,32 @@
+{
+  "name": "babel-plugin-three-examples",
+  "version": "1.0.0",
+  "main": "three.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamieowen/babel-plugin-three-examples.git"
+  },
+  "author": "Jamie Owen <hello@jamieowen.com> (=)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamieowen/babel-plugin-three-examples/issues"
+  },
+  "homepage": "https://github.com/jamieowen/babel-plugin-three-examples#readme",
+  "description": "",
+  "dependencies": {
+    "babel-runtime": "^6.26.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "chalk": "^2.3.2",
+    "glob": "^7.1.2"
+  }
+}
