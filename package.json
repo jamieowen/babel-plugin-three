@@ -1,13 +1,13 @@
 {
   "name": "babel-plugin-three-examples",
   "version": "1.0.0",
-  "main": "three.js",
+  "main": "src/index.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "update-fixtures": "node ./test/update-fixtures"
+    "test": "node test/runner.js",
+    "update-fixtures": "node test/update-fixtures"
   },
   "repository": {
     "type": "git",

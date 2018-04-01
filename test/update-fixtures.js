@@ -10,8 +10,6 @@ var path = require( 'path' );
 
 var root = path.resolve( __dirname, '../../' );
 
-console.log( 'ROOT', root );
-
 var fixtures = [
     '/three.js/examples/js/controls/OrbitControls.js',
     '/three.js/examples/js/postprocessing/EffectComposer.js',
