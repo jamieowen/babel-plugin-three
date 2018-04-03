@@ -1,7 +1,9 @@
 
 var path = require( 'path' );
+var fs = require( 'fs' );
 var glob = require( 'glob' );
 var babel = require( 'babel-core' );
+
 
 var fixtures = glob.sync( 'fixtures/**/!(*.actual|*.expected).js', {
     cwd: __dirname
@@ -26,9 +28,7 @@ var runTest = function( file ){
         return new Promise( ( resolve,reject )=>{
 
             babel.transformFile( source, {
-    
-                plugins: [ pluginPath ]
-    
+                plugins: [ pluginPath ]    
             }, ( err, result )=>{
     
                 if( err ){
@@ -48,8 +48,17 @@ var runTest = function( file ){
 
         return new Promise( ( resolve,reject )=>{
 
-            console.log( 'Write:', Object.keys( ast ) );
-            resolve( ast );
+            fs.writeFile( actual.toString(), ast.code, {
+                encoding: 'utf8' 
+            }, ( err,res )=>{
+
+                if( err ){
+                    reject(err);
+                }else{
+                    resolve();
+                }
+
+            });
 
         });
         
