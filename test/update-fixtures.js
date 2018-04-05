@@ -12,6 +12,7 @@ var root = path.resolve( __dirname, '../../' );
 
 var fixtures = [
     '/three.js/examples/js/controls/OrbitControls.js',
+    '/three.js/examples/js/controls/TransformControls.js',
     '/three.js/examples/js/postprocessing/EffectComposer.js',
     '/three.js/examples/js/postprocessing/UnrealBloomPass.js'
 ];

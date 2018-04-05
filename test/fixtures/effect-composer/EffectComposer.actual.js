@@ -1,9 +1,10 @@
 import { LinearFilter, RGBAFormat, WebGLRenderTarget, CopyShader, ShaderPass, MaskPass, ClearMaskPass } from 'three';
+
 /**
  * @author alteredq / http://alteredqualia.com/
  */
 
-THREE.EffectComposer = function (renderer, renderTarget) {
+const EffectComposer = function (renderer, renderTarget) {
 
 	this.renderer = renderer;
 
@@ -144,7 +145,7 @@ Object.assign(EffectComposer.prototype, {
 
 });
 
-THREE.Pass = function () {
+const Pass = function () {
 
 	// if set to true, the pass is processed by the composer
 	this.enabled = true;
@@ -169,5 +170,5 @@ Object.assign(Pass.prototype, {
 	}
 
 });
-export { Pass };
+export { EffectComposer, Pass };
 export default EffectComposer;

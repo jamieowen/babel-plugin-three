@@ -9,7 +9,7 @@ var fixtures = glob.sync( 'fixtures/**/!(*.actual|*.expected).js', {
     cwd: __dirname
 } );
 
-fixtures = fixtures.splice(0,1);
+// fixtures = fixtures.splice(0,1);
 
 var pluginPath = path.resolve( __dirname, '../' );
 

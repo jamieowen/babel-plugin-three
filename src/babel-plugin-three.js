@@ -3,6 +3,10 @@ module.exports = function babelPluginThree( babel ){
 
     const t = babel.types;
 
+    console.log( 'STARTUP PLUGIN' );
+    // var three = require( 'three' );
+    // console.log( three );
+
     return {
 
         visitor: {
@@ -25,6 +29,7 @@ module.exports = function babelPluginThree( babel ){
                     let exportDefault = null;
                     state.pluginThree.exports.forEach( (ex)=>{
                         if( state.file.opts.filename.indexOf( ex ) > -1 ){
+                            exports.push( ex ); // export default using { ClassName } as well ?
                             exportDefault = ex;
                         }else
                         if( exports.indexOf(ex) === -1 ){
@@ -81,24 +86,35 @@ module.exports = function babelPluginThree( babel ){
 
                             const usage = path.parentPath.parentPath;
 
-                            if( t.isProgram( usage.getFunctionParent() ) && t.isAssignmentExpression( usage ) ){
-                                    
-                                // Top level assigment expressions - treat as either class or constant declarations and export.
-                        
-                                console.log( 'OK' );
+                            console.log( 'Usage Node :', usage.type, Object.keys( usage.node ) );
+                            console.log( 'Parent Info', usage.parentPath.type, usage.parentPath.parentPath.type );
+
+                            // This is essentially handling any top level THREE.OrbitControls = function(){...}
+                            // declarations.  Converting them to exports
+                            // TODO : There are some cases where an example is wrapped entirely in a self-executing function closure. ( i.e. TransformControls )
+                            if( t.isProgram( usage.getFunctionParent() ) 
+                                && t.isFunctionExpression( usage.node.right )
+                                && t.isAssignmentExpression( usage ) 
+                                && t.isExpressionStatement( usage.parentPath ) 
+                            ){
+                                                            
                                 state.pluginThree.exports.push( 
                                     path.parentPath.node.property.name
                                 );
                                 
-                                try{
-                                    // usage.replaceWith( 
-                                    //     t.variableDeclarator( t.identifier( 'OKOK' ), usage.node.right )
-                                    // );
+                                try{                                    
+                                    // Produces strange output when replacing the AssignmentExpression, so replace the ExpressionStatement.
+                                    // https://github.com/babel/babel/issues/5072
+                                    usage.parentPath.replaceWith( 
+                                            t.variableDeclaration( "const", [
+                                                t.variableDeclarator( 
+                                                    t.identifier( path.parentPath.node.property.name ),usage.node.right
+                                                )
+                                            ] )
+                                    )
                                 }catch( err ){
                                     console.log( err );
                                 }
-
-
 
                             }else{
 
@@ -126,23 +142,3 @@ module.exports = function babelPluginThree( babel ){
     }
 
 }
-
-// Remove all member expressions 
-// and replace with the parent property identifier
-
-// put the parent property identifier in a hash map
-// to build the import statements.
-
-// ignore any THREE.Object variable declarations that exist
-// in the top level ( Program Node? ).  OR if we build a map of all classes
-// found in three.js global THREE object, we can check for its
-// existence first and fall back to that, otherwise we assume
-// we are creating and exporting it from this file.
-// one drawback is refs to example added classes from within this file.
-
-// if a variable declares a function and has a member name of THREE
-// we assume that is the default function/class being exported.
-
-// anything else is assumed to be a constant exported to THREE.
-
-// console.log( babel.transformFromAst( parent ) );
