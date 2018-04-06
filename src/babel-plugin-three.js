@@ -26,20 +26,22 @@ module.exports = function babelPluginThree( babel ){
         },
         post: ( state )=>{
 
-            console.log( 'POST ', state.opts.filename );
-            var relativePath = state.opts.filename.replace( BUILD_INDEX_THREE_PATH, '' );
-            
-            if( relativePath[0] === pathUtil.sep ){
-                console.log( 'SPPLSDASD' );
-                relativePath = relativePath.slice(1);
-            }
-
-            console.log( relativePath );
-
             if( BUILD_INDEX && this.indexMeta ){
 
-                // var index = JSON.parse( fs.readFileSync( BUILD_INDEX_PATH ) );
-                console.log( 'Write ', this.indexMeta.exports.length );
+                var relativePath = state.opts.filename.replace( BUILD_INDEX_THREE_PATH, '' );
+
+                if( relativePath[0] === pathUtil.sep ){
+                    relativePath = relativePath.slice(1);
+                }
+
+                /**
+                 * Store lookup for examples.
+                 * examplesPaths[ 'path/to/Example.js' ] = { imports: [], exports: [] }
+                 */
+
+                var index = JSON.parse( fs.readFileSync( BUILD_INDEX_PATH ) );
+                index.examplesPaths[ relativePath ] = this.indexMeta;
+                fs.writeFileSync( BUILD_INDEX_PATH, JSON.stringify( index, null, 4 ) );
 
             }
 
