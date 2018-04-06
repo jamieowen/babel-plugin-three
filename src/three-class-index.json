@@ -1,0 +1,1228 @@
+{
+    "VERSION": "0.91.0",
+    "three": {
+        "WebGLRenderTargetCube": true,
+        "WebGLRenderTarget": true,
+        "WebGLRenderer": true,
+        "ShaderLib": true,
+        "UniformsLib": true,
+        "UniformsUtils": true,
+        "ShaderChunk": true,
+        "FogExp2": true,
+        "Fog": true,
+        "Scene": true,
+        "Sprite": true,
+        "LOD": true,
+        "SkinnedMesh": true,
+        "Skeleton": true,
+        "Bone": true,
+        "Mesh": true,
+        "LineSegments": true,
+        "LineLoop": true,
+        "Line": true,
+        "Points": true,
+        "Group": true,
+        "VideoTexture": true,
+        "DataTexture": true,
+        "CompressedTexture": true,
+        "CubeTexture": true,
+        "CanvasTexture": true,
+        "DepthTexture": true,
+        "Texture": true,
+        "CompressedTextureLoader": true,
+        "DataTextureLoader": true,
+        "CubeTextureLoader": true,
+        "TextureLoader": true,
+        "ObjectLoader": true,
+        "MaterialLoader": true,
+        "BufferGeometryLoader": true,
+        "DefaultLoadingManager": true,
+        "LoadingManager": true,
+        "JSONLoader": true,
+        "ImageLoader": true,
+        "ImageBitmapLoader": true,
+        "FontLoader": true,
+        "FileLoader": true,
+        "Loader": true,
+        "LoaderUtils": true,
+        "Cache": true,
+        "AudioLoader": true,
+        "SpotLightShadow": true,
+        "SpotLight": true,
+        "PointLight": true,
+        "RectAreaLight": true,
+        "HemisphereLight": true,
+        "DirectionalLightShadow": true,
+        "DirectionalLight": true,
+        "AmbientLight": true,
+        "LightShadow": true,
+        "Light": true,
+        "StereoCamera": true,
+        "PerspectiveCamera": true,
+        "OrthographicCamera": true,
+        "CubeCamera": true,
+        "ArrayCamera": true,
+        "Camera": true,
+        "AudioListener": true,
+        "PositionalAudio": true,
+        "AudioContext": true,
+        "AudioAnalyser": true,
+        "Audio": true,
+        "VectorKeyframeTrack": true,
+        "StringKeyframeTrack": true,
+        "QuaternionKeyframeTrack": true,
+        "NumberKeyframeTrack": true,
+        "ColorKeyframeTrack": true,
+        "BooleanKeyframeTrack": true,
+        "PropertyMixer": true,
+        "PropertyBinding": true,
+        "KeyframeTrack": true,
+        "AnimationUtils": true,
+        "AnimationObjectGroup": true,
+        "AnimationMixer": true,
+        "AnimationClip": true,
+        "Uniform": true,
+        "InstancedBufferGeometry": true,
+        "BufferGeometry": true,
+        "Geometry": true,
+        "InterleavedBufferAttribute": true,
+        "InstancedInterleavedBuffer": true,
+        "InterleavedBuffer": true,
+        "InstancedBufferAttribute": true,
+        "Face3": true,
+        "Object3D": true,
+        "Raycaster": true,
+        "Layers": true,
+        "EventDispatcher": true,
+        "Clock": true,
+        "QuaternionLinearInterpolant": true,
+        "LinearInterpolant": true,
+        "DiscreteInterpolant": true,
+        "CubicInterpolant": true,
+        "Interpolant": true,
+        "Triangle": true,
+        "Math": true,
+        "Spherical": true,
+        "Cylindrical": true,
+        "Plane": true,
+        "Frustum": true,
+        "Sphere": true,
+        "Ray": true,
+        "Matrix4": true,
+        "Matrix3": true,
+        "Box3": true,
+        "Box2": true,
+        "Line3": true,
+        "Euler": true,
+        "Vector4": true,
+        "Vector3": true,
+        "Vector2": true,
+        "Quaternion": true,
+        "Color": true,
+        "ImmediateRenderObject": true,
+        "VertexNormalsHelper": true,
+        "SpotLightHelper": true,
+        "SkeletonHelper": true,
+        "PointLightHelper": true,
+        "RectAreaLightHelper": true,
+        "HemisphereLightHelper": true,
+        "GridHelper": true,
+        "PolarGridHelper": true,
+        "FaceNormalsHelper": true,
+        "DirectionalLightHelper": true,
+        "CameraHelper": true,
+        "BoxHelper": true,
+        "Box3Helper": true,
+        "PlaneHelper": true,
+        "ArrowHelper": true,
+        "AxesHelper": true,
+        "Shape": true,
+        "Path": true,
+        "ShapePath": true,
+        "Font": true,
+        "CurvePath": true,
+        "Curve": true,
+        "ShapeUtils": true,
+        "WebGLUtils": true,
+        "WireframeGeometry": true,
+        "ParametricGeometry": true,
+        "ParametricBufferGeometry": true,
+        "TetrahedronGeometry": true,
+        "TetrahedronBufferGeometry": true,
+        "OctahedronGeometry": true,
+        "OctahedronBufferGeometry": true,
+        "IcosahedronGeometry": true,
+        "IcosahedronBufferGeometry": true,
+        "DodecahedronGeometry": true,
+        "DodecahedronBufferGeometry": true,
+        "PolyhedronGeometry": true,
+        "PolyhedronBufferGeometry": true,
+        "TubeGeometry": true,
+        "TubeBufferGeometry": true,
+        "TorusKnotGeometry": true,
+        "TorusKnotBufferGeometry": true,
+        "TorusGeometry": true,
+        "TorusBufferGeometry": true,
+        "TextGeometry": true,
+        "TextBufferGeometry": true,
+        "SphereGeometry": true,
+        "SphereBufferGeometry": true,
+        "RingGeometry": true,
+        "RingBufferGeometry": true,
+        "PlaneGeometry": true,
+        "PlaneBufferGeometry": true,
+        "LatheGeometry": true,
+        "LatheBufferGeometry": true,
+        "ShapeGeometry": true,
+        "ShapeBufferGeometry": true,
+        "ExtrudeGeometry": true,
+        "ExtrudeBufferGeometry": true,
+        "EdgesGeometry": true,
+        "ConeGeometry": true,
+        "ConeBufferGeometry": true,
+        "CylinderGeometry": true,
+        "CylinderBufferGeometry": true,
+        "CircleGeometry": true,
+        "CircleBufferGeometry": true,
+        "BoxGeometry": true,
+        "BoxBufferGeometry": true,
+        "ShadowMaterial": true,
+        "SpriteMaterial": true,
+        "RawShaderMaterial": true,
+        "ShaderMaterial": true,
+        "PointsMaterial": true,
+        "MeshPhysicalMaterial": true,
+        "MeshStandardMaterial": true,
+        "MeshPhongMaterial": true,
+        "MeshToonMaterial": true,
+        "MeshNormalMaterial": true,
+        "MeshLambertMaterial": true,
+        "MeshDepthMaterial": true,
+        "MeshDistanceMaterial": true,
+        "MeshBasicMaterial": true,
+        "LineDashedMaterial": true,
+        "LineBasicMaterial": true,
+        "Material": true,
+        "Float64BufferAttribute": true,
+        "Float32BufferAttribute": true,
+        "Uint32BufferAttribute": true,
+        "Int32BufferAttribute": true,
+        "Uint16BufferAttribute": true,
+        "Int16BufferAttribute": true,
+        "Uint8ClampedBufferAttribute": true,
+        "Uint8BufferAttribute": true,
+        "Int8BufferAttribute": true,
+        "BufferAttribute": true,
+        "ArcCurve": true,
+        "CatmullRomCurve3": true,
+        "CubicBezierCurve": true,
+        "CubicBezierCurve3": true,
+        "EllipseCurve": true,
+        "LineCurve": true,
+        "LineCurve3": true,
+        "QuadraticBezierCurve": true,
+        "QuadraticBezierCurve3": true,
+        "SplineCurve": true,
+        "REVISION": true,
+        "MOUSE": true,
+        "CullFaceNone": true,
+        "CullFaceBack": true,
+        "CullFaceFront": true,
+        "CullFaceFrontBack": true,
+        "FrontFaceDirectionCW": true,
+        "FrontFaceDirectionCCW": true,
+        "BasicShadowMap": true,
+        "PCFShadowMap": true,
+        "PCFSoftShadowMap": true,
+        "FrontSide": true,
+        "BackSide": true,
+        "DoubleSide": true,
+        "FlatShading": true,
+        "SmoothShading": true,
+        "NoColors": true,
+        "FaceColors": true,
+        "VertexColors": true,
+        "NoBlending": true,
+        "NormalBlending": true,
+        "AdditiveBlending": true,
+        "SubtractiveBlending": true,
+        "MultiplyBlending": true,
+        "CustomBlending": true,
+        "AddEquation": true,
+        "SubtractEquation": true,
+        "ReverseSubtractEquation": true,
+        "MinEquation": true,
+        "MaxEquation": true,
+        "ZeroFactor": true,
+        "OneFactor": true,
+        "SrcColorFactor": true,
+        "OneMinusSrcColorFactor": true,
+        "SrcAlphaFactor": true,
+        "OneMinusSrcAlphaFactor": true,
+        "DstAlphaFactor": true,
+        "OneMinusDstAlphaFactor": true,
+        "DstColorFactor": true,
+        "OneMinusDstColorFactor": true,
+        "SrcAlphaSaturateFactor": true,
+        "NeverDepth": true,
+        "AlwaysDepth": true,
+        "LessDepth": true,
+        "LessEqualDepth": true,
+        "EqualDepth": true,
+        "GreaterEqualDepth": true,
+        "GreaterDepth": true,
+        "NotEqualDepth": true,
+        "MultiplyOperation": true,
+        "MixOperation": true,
+        "AddOperation": true,
+        "NoToneMapping": true,
+        "LinearToneMapping": true,
+        "ReinhardToneMapping": true,
+        "Uncharted2ToneMapping": true,
+        "CineonToneMapping": true,
+        "UVMapping": true,
+        "CubeReflectionMapping": true,
+        "CubeRefractionMapping": true,
+        "EquirectangularReflectionMapping": true,
+        "EquirectangularRefractionMapping": true,
+        "SphericalReflectionMapping": true,
+        "CubeUVReflectionMapping": true,
+        "CubeUVRefractionMapping": true,
+        "RepeatWrapping": true,
+        "ClampToEdgeWrapping": true,
+        "MirroredRepeatWrapping": true,
+        "NearestFilter": true,
+        "NearestMipMapNearestFilter": true,
+        "NearestMipMapLinearFilter": true,
+        "LinearFilter": true,
+        "LinearMipMapNearestFilter": true,
+        "LinearMipMapLinearFilter": true,
+        "UnsignedByteType": true,
+        "ByteType": true,
+        "ShortType": true,
+        "UnsignedShortType": true,
+        "IntType": true,
+        "UnsignedIntType": true,
+        "FloatType": true,
+        "HalfFloatType": true,
+        "UnsignedShort4444Type": true,
+        "UnsignedShort5551Type": true,
+        "UnsignedShort565Type": true,
+        "UnsignedInt248Type": true,
+        "AlphaFormat": true,
+        "RGBFormat": true,
+        "RGBAFormat": true,
+        "LuminanceFormat": true,
+        "LuminanceAlphaFormat": true,
+        "RGBEFormat": true,
+        "DepthFormat": true,
+        "DepthStencilFormat": true,
+        "RGB_S3TC_DXT1_Format": true,
+        "RGBA_S3TC_DXT1_Format": true,
+        "RGBA_S3TC_DXT3_Format": true,
+        "RGBA_S3TC_DXT5_Format": true,
+        "RGB_PVRTC_4BPPV1_Format": true,
+        "RGB_PVRTC_2BPPV1_Format": true,
+        "RGBA_PVRTC_4BPPV1_Format": true,
+        "RGBA_PVRTC_2BPPV1_Format": true,
+        "RGB_ETC1_Format": true,
+        "RGBA_ASTC_4x4_Format": true,
+        "RGBA_ASTC_5x4_Format": true,
+        "RGBA_ASTC_5x5_Format": true,
+        "RGBA_ASTC_6x5_Format": true,
+        "RGBA_ASTC_6x6_Format": true,
+        "RGBA_ASTC_8x5_Format": true,
+        "RGBA_ASTC_8x6_Format": true,
+        "RGBA_ASTC_8x8_Format": true,
+        "RGBA_ASTC_10x5_Format": true,
+        "RGBA_ASTC_10x6_Format": true,
+        "RGBA_ASTC_10x8_Format": true,
+        "RGBA_ASTC_10x10_Format": true,
+        "RGBA_ASTC_12x10_Format": true,
+        "RGBA_ASTC_12x12_Format": true,
+        "LoopOnce": true,
+        "LoopRepeat": true,
+        "LoopPingPong": true,
+        "InterpolateDiscrete": true,
+        "InterpolateLinear": true,
+        "InterpolateSmooth": true,
+        "ZeroCurvatureEnding": true,
+        "ZeroSlopeEnding": true,
+        "WrapAroundEnding": true,
+        "TrianglesDrawMode": true,
+        "TriangleStripDrawMode": true,
+        "TriangleFanDrawMode": true,
+        "LinearEncoding": true,
+        "sRGBEncoding": true,
+        "GammaEncoding": true,
+        "RGBEEncoding": true,
+        "LogLuvEncoding": true,
+        "RGBM7Encoding": true,
+        "RGBM16Encoding": true,
+        "RGBDEncoding": true,
+        "BasicDepthPacking": true,
+        "RGBADepthPacking": true,
+        "CubeGeometry": true,
+        "Face4": true,
+        "LineStrip": true,
+        "LinePieces": true,
+        "MeshFaceMaterial": true,
+        "MultiMaterial": true,
+        "PointCloud": true,
+        "Particle": true,
+        "ParticleSystem": true,
+        "PointCloudMaterial": true,
+        "ParticleBasicMaterial": true,
+        "ParticleSystemMaterial": true,
+        "Vertex": true,
+        "DynamicBufferAttribute": true,
+        "Int8Attribute": true,
+        "Uint8Attribute": true,
+        "Uint8ClampedAttribute": true,
+        "Int16Attribute": true,
+        "Uint16Attribute": true,
+        "Int32Attribute": true,
+        "Uint32Attribute": true,
+        "Float32Attribute": true,
+        "Float64Attribute": true,
+        "ClosedSplineCurve3": true,
+        "SplineCurve3": true,
+        "Spline": true,
+        "AxisHelper": true,
+        "BoundingBoxHelper": true,
+        "EdgesHelper": true,
+        "WireframeHelper": true,
+        "XHRLoader": true,
+        "BinaryTextureLoader": true,
+        "GeometryUtils": true,
+        "ImageUtils": true,
+        "Projector": true,
+        "CanvasRenderer": true,
+        "SceneUtils": true,
+        "LensFlare": true
+    },
+    "examples": {
+        "CCDIKSolver.js": {
+            "path": "examples/js/animation/CCDIKSolver.js"
+        },
+        "MMDPhysics.js": {
+            "path": "examples/js/animation/MMDPhysics.js"
+        },
+        "AnimationClipCreator.js": {
+            "path": "examples/js/AnimationClipCreator.js"
+        },
+        "BufferGeometryUtils.js": {
+            "path": "examples/js/BufferGeometryUtils.js"
+        },
+        "CinematicCamera.js": {
+            "path": "examples/js/cameras/CinematicCamera.js"
+        },
+        "Car.js": {
+            "path": "examples/js/Car.js"
+        },
+        "Cloth.js": {
+            "path": "examples/js/Cloth.js"
+        },
+        "DeviceOrientationControls.js": {
+            "path": "examples/js/controls/DeviceOrientationControls.js"
+        },
+        "DragControls.js": {
+            "path": "examples/js/controls/DragControls.js"
+        },
+        "EditorControls.js": {
+            "path": "examples/js/controls/EditorControls.js"
+        },
+        "FirstPersonControls.js": {
+            "path": "examples/js/controls/FirstPersonControls.js"
+        },
+        "FlyControls.js": {
+            "path": "examples/js/controls/FlyControls.js"
+        },
+        "OrbitControls.js": {
+            "path": "examples/js/controls/OrbitControls.js"
+        },
+        "OrthographicTrackballControls.js": {
+            "path": "examples/js/controls/OrthographicTrackballControls.js"
+        },
+        "PointerLockControls.js": {
+            "path": "examples/js/controls/PointerLockControls.js"
+        },
+        "TrackballControls.js": {
+            "path": "examples/js/controls/TrackballControls.js"
+        },
+        "TransformControls.js": {
+            "path": "examples/js/controls/TransformControls.js"
+        },
+        "VRControls.js": {
+            "path": "examples/js/controls/VRControls.js"
+        },
+        "ConvexObjectBreaker.js": {
+            "path": "examples/js/ConvexObjectBreaker.js"
+        },
+        "CurveExtras.js": {
+            "path": "examples/js/CurveExtras.js"
+        },
+        "NURBSCurve.js": {
+            "path": "examples/js/curves/NURBSCurve.js"
+        },
+        "NURBSSurface.js": {
+            "path": "examples/js/curves/NURBSSurface.js"
+        },
+        "NURBSUtils.js": {
+            "path": "examples/js/curves/NURBSUtils.js"
+        },
+        "Detector.js": {
+            "path": "examples/js/Detector.js"
+        },
+        "AnaglyphEffect.js": {
+            "path": "examples/js/effects/AnaglyphEffect.js"
+        },
+        "AsciiEffect.js": {
+            "path": "examples/js/effects/AsciiEffect.js"
+        },
+        "OutlineEffect.js": {
+            "path": "examples/js/effects/OutlineEffect.js"
+        },
+        "ParallaxBarrierEffect.js": {
+            "path": "examples/js/effects/ParallaxBarrierEffect.js"
+        },
+        "PeppersGhostEffect.js": {
+            "path": "examples/js/effects/PeppersGhostEffect.js"
+        },
+        "StereoEffect.js": {
+            "path": "examples/js/effects/StereoEffect.js"
+        },
+        "VREffect.js": {
+            "path": "examples/js/effects/VREffect.js"
+        },
+        "GLTFExporter.js": {
+            "path": "examples/js/exporters/GLTFExporter.js"
+        },
+        "MMDExporter.js": {
+            "path": "examples/js/exporters/MMDExporter.js"
+        },
+        "OBJExporter.js": {
+            "path": "examples/js/exporters/OBJExporter.js"
+        },
+        "PLYExporter.js": {
+            "path": "examples/js/exporters/PLYExporter.js"
+        },
+        "STLBinaryExporter.js": {
+            "path": "examples/js/exporters/STLBinaryExporter.js"
+        },
+        "STLExporter.js": {
+            "path": "examples/js/exporters/STLExporter.js"
+        },
+        "TypedGeometryExporter.js": {
+            "path": "examples/js/exporters/TypedGeometryExporter.js"
+        },
+        "ConvexGeometry.js": {
+            "path": "examples/js/geometries/ConvexGeometry.js"
+        },
+        "DecalGeometry.js": {
+            "path": "examples/js/geometries/DecalGeometry.js"
+        },
+        "hilbert2D.js": {
+            "path": "examples/js/geometries/hilbert2D.js"
+        },
+        "hilbert3D.js": {
+            "path": "examples/js/geometries/hilbert3D.js"
+        },
+        "TeapotBufferGeometry.js": {
+            "path": "examples/js/geometries/TeapotBufferGeometry.js"
+        },
+        "GPUComputationRenderer.js": {
+            "path": "examples/js/GPUComputationRenderer.js"
+        },
+        "GPUParticleSystem.js": {
+            "path": "examples/js/GPUParticleSystem.js"
+        },
+        "Gyroscope.js": {
+            "path": "examples/js/Gyroscope.js"
+        },
+        "ImprovedNoise.js": {
+            "path": "examples/js/ImprovedNoise.js"
+        },
+        "RectAreaLightUniformsLib.js": {
+            "path": "examples/js/lights/RectAreaLightUniformsLib.js"
+        },
+        "Line2.js": {
+            "path": "examples/js/lines/Line2.js"
+        },
+        "LineGeometry.js": {
+            "path": "examples/js/lines/LineGeometry.js"
+        },
+        "LineMaterial.js": {
+            "path": "examples/js/lines/LineMaterial.js"
+        },
+        "LineSegments2.js": {
+            "path": "examples/js/lines/LineSegments2.js"
+        },
+        "LineSegmentsGeometry.js": {
+            "path": "examples/js/lines/LineSegmentsGeometry.js"
+        },
+        "Wireframe.js": {
+            "path": "examples/js/lines/Wireframe.js"
+        },
+        "WireframeGeometry2.js": {
+            "path": "examples/js/lines/WireframeGeometry2.js"
+        },
+        "3MFLoader.js": {
+            "path": "examples/js/loaders/3MFLoader.js"
+        },
+        "AMFLoader.js": {
+            "path": "examples/js/loaders/AMFLoader.js"
+        },
+        "AssimpJSONLoader.js": {
+            "path": "examples/js/loaders/AssimpJSONLoader.js"
+        },
+        "AssimpLoader.js": {
+            "path": "examples/js/loaders/AssimpLoader.js"
+        },
+        "AWDLoader.js": {
+            "path": "examples/js/loaders/AWDLoader.js"
+        },
+        "BabylonLoader.js": {
+            "path": "examples/js/loaders/BabylonLoader.js"
+        },
+        "BinaryLoader.js": {
+            "path": "examples/js/loaders/BinaryLoader.js"
+        },
+        "BVHLoader.js": {
+            "path": "examples/js/loaders/BVHLoader.js"
+        },
+        "ColladaLoader.js": {
+            "path": "examples/js/loaders/ColladaLoader.js"
+        },
+        "DDSLoader.js": {
+            "path": "examples/js/loaders/DDSLoader.js"
+        },
+        "LegacyGLTFLoader.js": {
+            "path": "examples/js/loaders/deprecated/LegacyGLTFLoader.js"
+        },
+        "DRACOLoader.js": {
+            "path": "examples/js/loaders/DRACOLoader.js"
+        },
+        "EXRLoader.js": {
+            "path": "examples/js/loaders/EXRLoader.js"
+        },
+        "FBXLoader.js": {
+            "path": "examples/js/loaders/FBXLoader.js"
+        },
+        "GCodeLoader.js": {
+            "path": "examples/js/loaders/GCodeLoader.js"
+        },
+        "GLTFLoader.js": {
+            "path": "examples/js/loaders/GLTFLoader.js"
+        },
+        "HDRCubeTextureLoader.js": {
+            "path": "examples/js/loaders/HDRCubeTextureLoader.js"
+        },
+        "KMZLoader.js": {
+            "path": "examples/js/loaders/KMZLoader.js"
+        },
+        "KTXLoader.js": {
+            "path": "examples/js/loaders/KTXLoader.js"
+        },
+        "LoaderSupport.js": {
+            "path": "examples/js/loaders/LoaderSupport.js"
+        },
+        "MD2Loader.js": {
+            "path": "examples/js/loaders/MD2Loader.js"
+        },
+        "MMDLoader.js": {
+            "path": "examples/js/loaders/MMDLoader.js"
+        },
+        "MTLLoader.js": {
+            "path": "examples/js/loaders/MTLLoader.js"
+        },
+        "NRRDLoader.js": {
+            "path": "examples/js/loaders/NRRDLoader.js"
+        },
+        "OBJLoader.js": {
+            "path": "examples/js/loaders/OBJLoader.js"
+        },
+        "OBJLoader2.js": {
+            "path": "examples/js/loaders/OBJLoader2.js"
+        },
+        "PCDLoader.js": {
+            "path": "examples/js/loaders/PCDLoader.js"
+        },
+        "PDBLoader.js": {
+            "path": "examples/js/loaders/PDBLoader.js"
+        },
+        "PlayCanvasLoader.js": {
+            "path": "examples/js/loaders/PlayCanvasLoader.js"
+        },
+        "PLYLoader.js": {
+            "path": "examples/js/loaders/PLYLoader.js"
+        },
+        "PVRLoader.js": {
+            "path": "examples/js/loaders/PVRLoader.js"
+        },
+        "RGBELoader.js": {
+            "path": "examples/js/loaders/RGBELoader.js"
+        },
+        "STLLoader.js": {
+            "path": "examples/js/loaders/STLLoader.js"
+        },
+        "SVGLoader.js": {
+            "path": "examples/js/loaders/SVGLoader.js"
+        },
+        "TDSLoader.js": {
+            "path": "examples/js/loaders/TDSLoader.js"
+        },
+        "TGALoader.js": {
+            "path": "examples/js/loaders/TGALoader.js"
+        },
+        "TTFLoader.js": {
+            "path": "examples/js/loaders/TTFLoader.js"
+        },
+        "UTF8Loader.js": {
+            "path": "examples/js/loaders/UTF8Loader.js"
+        },
+        "VRMLLoader.js": {
+            "path": "examples/js/loaders/VRMLLoader.js"
+        },
+        "VTKLoader.js": {
+            "path": "examples/js/loaders/VTKLoader.js"
+        },
+        "MarchingCubes.js": {
+            "path": "examples/js/MarchingCubes.js"
+        },
+        "ColorConverter.js": {
+            "path": "examples/js/math/ColorConverter.js"
+        },
+        "Lut.js": {
+            "path": "examples/js/math/Lut.js"
+        },
+        "MD2Character.js": {
+            "path": "examples/js/MD2Character.js"
+        },
+        "MD2CharacterComplex.js": {
+            "path": "examples/js/MD2CharacterComplex.js"
+        },
+        "BufferSubdivisionModifier.js": {
+            "path": "examples/js/modifiers/BufferSubdivisionModifier.js"
+        },
+        "ExplodeModifier.js": {
+            "path": "examples/js/modifiers/ExplodeModifier.js"
+        },
+        "SimplifyModifier.js": {
+            "path": "examples/js/modifiers/SimplifyModifier.js"
+        },
+        "SubdivisionModifier.js": {
+            "path": "examples/js/modifiers/SubdivisionModifier.js"
+        },
+        "TessellateModifier.js": {
+            "path": "examples/js/modifiers/TessellateModifier.js"
+        },
+        "MorphAnimMesh.js": {
+            "path": "examples/js/MorphAnimMesh.js"
+        },
+        "MorphBlendMesh.js": {
+            "path": "examples/js/MorphBlendMesh.js"
+        },
+        "CameraNode.js": {
+            "path": "examples/js/nodes/accessors/CameraNode.js"
+        },
+        "ColorsNode.js": {
+            "path": "examples/js/nodes/accessors/ColorsNode.js"
+        },
+        "LightNode.js": {
+            "path": "examples/js/nodes/accessors/LightNode.js"
+        },
+        "NormalNode.js": {
+            "path": "examples/js/nodes/accessors/NormalNode.js"
+        },
+        "PositionNode.js": {
+            "path": "examples/js/nodes/accessors/PositionNode.js"
+        },
+        "ReflectNode.js": {
+            "path": "examples/js/nodes/accessors/ReflectNode.js"
+        },
+        "ScreenUVNode.js": {
+            "path": "examples/js/nodes/accessors/ScreenUVNode.js"
+        },
+        "UVNode.js": {
+            "path": "examples/js/nodes/accessors/UVNode.js"
+        },
+        "AttributeNode.js": {
+            "path": "examples/js/nodes/AttributeNode.js"
+        },
+        "ConstNode.js": {
+            "path": "examples/js/nodes/ConstNode.js"
+        },
+        "FunctionCallNode.js": {
+            "path": "examples/js/nodes/FunctionCallNode.js"
+        },
+        "FunctionNode.js": {
+            "path": "examples/js/nodes/FunctionNode.js"
+        },
+        "GLNode.js": {
+            "path": "examples/js/nodes/GLNode.js"
+        },
+        "InputNode.js": {
+            "path": "examples/js/nodes/InputNode.js"
+        },
+        "ColorNode.js": {
+            "path": "examples/js/nodes/inputs/ColorNode.js"
+        },
+        "CubeTextureNode.js": {
+            "path": "examples/js/nodes/inputs/CubeTextureNode.js"
+        },
+        "FloatNode.js": {
+            "path": "examples/js/nodes/inputs/FloatNode.js"
+        },
+        "IntNode.js": {
+            "path": "examples/js/nodes/inputs/IntNode.js"
+        },
+        "Matrix3Node.js": {
+            "path": "examples/js/nodes/inputs/Matrix3Node.js"
+        },
+        "Matrix4Node.js": {
+            "path": "examples/js/nodes/inputs/Matrix4Node.js"
+        },
+        "ReflectorNode.js": {
+            "path": "examples/js/nodes/inputs/ReflectorNode.js"
+        },
+        "ScreenNode.js": {
+            "path": "examples/js/nodes/inputs/ScreenNode.js"
+        },
+        "TextureNode.js": {
+            "path": "examples/js/nodes/inputs/TextureNode.js"
+        },
+        "Vector2Node.js": {
+            "path": "examples/js/nodes/inputs/Vector2Node.js"
+        },
+        "Vector3Node.js": {
+            "path": "examples/js/nodes/inputs/Vector3Node.js"
+        },
+        "Vector4Node.js": {
+            "path": "examples/js/nodes/inputs/Vector4Node.js"
+        },
+        "PhongNode.js": {
+            "path": "examples/js/nodes/materials/PhongNode.js"
+        },
+        "PhongNodeMaterial.js": {
+            "path": "examples/js/nodes/materials/PhongNodeMaterial.js"
+        },
+        "SpriteNode.js": {
+            "path": "examples/js/nodes/materials/SpriteNode.js"
+        },
+        "SpriteNodeMaterial.js": {
+            "path": "examples/js/nodes/materials/SpriteNodeMaterial.js"
+        },
+        "StandardNode.js": {
+            "path": "examples/js/nodes/materials/StandardNode.js"
+        },
+        "StandardNodeMaterial.js": {
+            "path": "examples/js/nodes/materials/StandardNodeMaterial.js"
+        },
+        "Math1Node.js": {
+            "path": "examples/js/nodes/math/Math1Node.js"
+        },
+        "Math2Node.js": {
+            "path": "examples/js/nodes/math/Math2Node.js"
+        },
+        "Math3Node.js": {
+            "path": "examples/js/nodes/math/Math3Node.js"
+        },
+        "OperatorNode.js": {
+            "path": "examples/js/nodes/math/OperatorNode.js"
+        },
+        "NodeBuilder.js": {
+            "path": "examples/js/nodes/NodeBuilder.js"
+        },
+        "NodeFrame.js": {
+            "path": "examples/js/nodes/NodeFrame.js"
+        },
+        "NodeLib.js": {
+            "path": "examples/js/nodes/NodeLib.js"
+        },
+        "NodeMaterial.js": {
+            "path": "examples/js/nodes/NodeMaterial.js"
+        },
+        "NodePass.js": {
+            "path": "examples/js/nodes/postprocessing/NodePass.js"
+        },
+        "RawNode.js": {
+            "path": "examples/js/nodes/RawNode.js"
+        },
+        "TempNode.js": {
+            "path": "examples/js/nodes/TempNode.js"
+        },
+        "BlurNode.js": {
+            "path": "examples/js/nodes/utils/BlurNode.js"
+        },
+        "BumpNode.js": {
+            "path": "examples/js/nodes/utils/BumpNode.js"
+        },
+        "ColorAdjustmentNode.js": {
+            "path": "examples/js/nodes/utils/ColorAdjustmentNode.js"
+        },
+        "JoinNode.js": {
+            "path": "examples/js/nodes/utils/JoinNode.js"
+        },
+        "LuminanceNode.js": {
+            "path": "examples/js/nodes/utils/LuminanceNode.js"
+        },
+        "NoiseNode.js": {
+            "path": "examples/js/nodes/utils/NoiseNode.js"
+        },
+        "NormalMapNode.js": {
+            "path": "examples/js/nodes/utils/NormalMapNode.js"
+        },
+        "ResolutionNode.js": {
+            "path": "examples/js/nodes/utils/ResolutionNode.js"
+        },
+        "RoughnessToBlinnExponentNode.js": {
+            "path": "examples/js/nodes/utils/RoughnessToBlinnExponentNode.js"
+        },
+        "SwitchNode.js": {
+            "path": "examples/js/nodes/utils/SwitchNode.js"
+        },
+        "TimerNode.js": {
+            "path": "examples/js/nodes/utils/TimerNode.js"
+        },
+        "UVTransformNode.js": {
+            "path": "examples/js/nodes/utils/UVTransformNode.js"
+        },
+        "VelocityNode.js": {
+            "path": "examples/js/nodes/utils/VelocityNode.js"
+        },
+        "VarNode.js": {
+            "path": "examples/js/nodes/VarNode.js"
+        },
+        "Lensflare.js": {
+            "path": "examples/js/objects/Lensflare.js"
+        },
+        "Reflector.js": {
+            "path": "examples/js/objects/Reflector.js"
+        },
+        "ReflectorRTT.js": {
+            "path": "examples/js/objects/ReflectorRTT.js"
+        },
+        "Refractor.js": {
+            "path": "examples/js/objects/Refractor.js"
+        },
+        "ShadowMesh.js": {
+            "path": "examples/js/objects/ShadowMesh.js"
+        },
+        "Sky.js": {
+            "path": "examples/js/objects/Sky.js"
+        },
+        "Water.js": {
+            "path": "examples/js/objects/Water.js"
+        },
+        "Water2.js": {
+            "path": "examples/js/objects/Water2.js"
+        },
+        "Ocean.js": {
+            "path": "examples/js/Ocean.js"
+        },
+        "ParametricGeometries.js": {
+            "path": "examples/js/ParametricGeometries.js"
+        },
+        "PMREMCubeUVPacker.js": {
+            "path": "examples/js/pmrem/PMREMCubeUVPacker.js"
+        },
+        "PMREMGenerator.js": {
+            "path": "examples/js/pmrem/PMREMGenerator.js"
+        },
+        "AdaptiveToneMappingPass.js": {
+            "path": "examples/js/postprocessing/AdaptiveToneMappingPass.js"
+        },
+        "BloomPass.js": {
+            "path": "examples/js/postprocessing/BloomPass.js"
+        },
+        "BokehPass.js": {
+            "path": "examples/js/postprocessing/BokehPass.js"
+        },
+        "ClearPass.js": {
+            "path": "examples/js/postprocessing/ClearPass.js"
+        },
+        "CubeTexturePass.js": {
+            "path": "examples/js/postprocessing/CubeTexturePass.js"
+        },
+        "DotScreenPass.js": {
+            "path": "examples/js/postprocessing/DotScreenPass.js"
+        },
+        "EffectComposer.js": {
+            "path": "examples/js/postprocessing/EffectComposer.js"
+        },
+        "FilmPass.js": {
+            "path": "examples/js/postprocessing/FilmPass.js"
+        },
+        "GlitchPass.js": {
+            "path": "examples/js/postprocessing/GlitchPass.js"
+        },
+        "MaskPass.js": {
+            "path": "examples/js/postprocessing/MaskPass.js"
+        },
+        "OutlinePass.js": {
+            "path": "examples/js/postprocessing/OutlinePass.js"
+        },
+        "RenderPass.js": {
+            "path": "examples/js/postprocessing/RenderPass.js"
+        },
+        "SAOPass.js": {
+            "path": "examples/js/postprocessing/SAOPass.js"
+        },
+        "SavePass.js": {
+            "path": "examples/js/postprocessing/SavePass.js"
+        },
+        "ShaderPass.js": {
+            "path": "examples/js/postprocessing/ShaderPass.js"
+        },
+        "SMAAPass.js": {
+            "path": "examples/js/postprocessing/SMAAPass.js"
+        },
+        "SSAARenderPass.js": {
+            "path": "examples/js/postprocessing/SSAARenderPass.js"
+        },
+        "SSAOPass.js": {
+            "path": "examples/js/postprocessing/SSAOPass.js"
+        },
+        "TAARenderPass.js": {
+            "path": "examples/js/postprocessing/TAARenderPass.js"
+        },
+        "TexturePass.js": {
+            "path": "examples/js/postprocessing/TexturePass.js"
+        },
+        "UnrealBloomPass.js": {
+            "path": "examples/js/postprocessing/UnrealBloomPass.js"
+        },
+        "PRNG.js": {
+            "path": "examples/js/PRNG.js"
+        },
+        "QuickHull.js": {
+            "path": "examples/js/QuickHull.js"
+        },
+        "CanvasRenderer.js": {
+            "path": "examples/js/renderers/CanvasRenderer.js"
+        },
+        "CSS2DRenderer.js": {
+            "path": "examples/js/renderers/CSS2DRenderer.js"
+        },
+        "CSS3DRenderer.js": {
+            "path": "examples/js/renderers/CSS3DRenderer.js"
+        },
+        "Projector.js": {
+            "path": "examples/js/renderers/Projector.js"
+        },
+        "RaytracingRenderer.js": {
+            "path": "examples/js/renderers/RaytracingRenderer.js"
+        },
+        "RaytracingWorker.js": {
+            "path": "examples/js/renderers/RaytracingWorker.js"
+        },
+        "SoftwareRenderer.js": {
+            "path": "examples/js/renderers/SoftwareRenderer.js"
+        },
+        "SVGRenderer.js": {
+            "path": "examples/js/renderers/SVGRenderer.js"
+        },
+        "WebGLDeferredRenderer.js": {
+            "path": "examples/js/renderers/WebGLDeferredRenderer.js"
+        },
+        "RollerCoaster.js": {
+            "path": "examples/js/RollerCoaster.js"
+        },
+        "ShaderGodRays.js": {
+            "path": "examples/js/ShaderGodRays.js"
+        },
+        "BasicShader.js": {
+            "path": "examples/js/shaders/BasicShader.js"
+        },
+        "BleachBypassShader.js": {
+            "path": "examples/js/shaders/BleachBypassShader.js"
+        },
+        "BlendShader.js": {
+            "path": "examples/js/shaders/BlendShader.js"
+        },
+        "BokehShader.js": {
+            "path": "examples/js/shaders/BokehShader.js"
+        },
+        "BokehShader2.js": {
+            "path": "examples/js/shaders/BokehShader2.js"
+        },
+        "BrightnessContrastShader.js": {
+            "path": "examples/js/shaders/BrightnessContrastShader.js"
+        },
+        "ColorCorrectionShader.js": {
+            "path": "examples/js/shaders/ColorCorrectionShader.js"
+        },
+        "ColorifyShader.js": {
+            "path": "examples/js/shaders/ColorifyShader.js"
+        },
+        "ConvolutionShader.js": {
+            "path": "examples/js/shaders/ConvolutionShader.js"
+        },
+        "CopyShader.js": {
+            "path": "examples/js/shaders/CopyShader.js"
+        },
+        "DepthLimitedBlurShader.js": {
+            "path": "examples/js/shaders/DepthLimitedBlurShader.js"
+        },
+        "DigitalGlitch.js": {
+            "path": "examples/js/shaders/DigitalGlitch.js"
+        },
+        "DOFMipMapShader.js": {
+            "path": "examples/js/shaders/DOFMipMapShader.js"
+        },
+        "DotScreenShader.js": {
+            "path": "examples/js/shaders/DotScreenShader.js"
+        },
+        "FilmShader.js": {
+            "path": "examples/js/shaders/FilmShader.js"
+        },
+        "FocusShader.js": {
+            "path": "examples/js/shaders/FocusShader.js"
+        },
+        "FreiChenShader.js": {
+            "path": "examples/js/shaders/FreiChenShader.js"
+        },
+        "FresnelShader.js": {
+            "path": "examples/js/shaders/FresnelShader.js"
+        },
+        "FXAAShader.js": {
+            "path": "examples/js/shaders/FXAAShader.js"
+        },
+        "GammaCorrectionShader.js": {
+            "path": "examples/js/shaders/GammaCorrectionShader.js"
+        },
+        "HorizontalBlurShader.js": {
+            "path": "examples/js/shaders/HorizontalBlurShader.js"
+        },
+        "HorizontalTiltShiftShader.js": {
+            "path": "examples/js/shaders/HorizontalTiltShiftShader.js"
+        },
+        "HueSaturationShader.js": {
+            "path": "examples/js/shaders/HueSaturationShader.js"
+        },
+        "KaleidoShader.js": {
+            "path": "examples/js/shaders/KaleidoShader.js"
+        },
+        "LuminosityHighPassShader.js": {
+            "path": "examples/js/shaders/LuminosityHighPassShader.js"
+        },
+        "LuminosityShader.js": {
+            "path": "examples/js/shaders/LuminosityShader.js"
+        },
+        "MirrorShader.js": {
+            "path": "examples/js/shaders/MirrorShader.js"
+        },
+        "NormalMapShader.js": {
+            "path": "examples/js/shaders/NormalMapShader.js"
+        },
+        "OceanShaders.js": {
+            "path": "examples/js/shaders/OceanShaders.js"
+        },
+        "ParallaxShader.js": {
+            "path": "examples/js/shaders/ParallaxShader.js"
+        },
+        "PixelShader.js": {
+            "path": "examples/js/shaders/PixelShader.js"
+        },
+        "RGBShiftShader.js": {
+            "path": "examples/js/shaders/RGBShiftShader.js"
+        },
+        "SAOShader.js": {
+            "path": "examples/js/shaders/SAOShader.js"
+        },
+        "SepiaShader.js": {
+            "path": "examples/js/shaders/SepiaShader.js"
+        },
+        "SMAAShader.js": {
+            "path": "examples/js/shaders/SMAAShader.js"
+        },
+        "SobelOperatorShader.js": {
+            "path": "examples/js/shaders/SobelOperatorShader.js"
+        },
+        "SSAOShader.js": {
+            "path": "examples/js/shaders/SSAOShader.js"
+        },
+        "TechnicolorShader.js": {
+            "path": "examples/js/shaders/TechnicolorShader.js"
+        },
+        "ToneMapShader.js": {
+            "path": "examples/js/shaders/ToneMapShader.js"
+        },
+        "TriangleBlurShader.js": {
+            "path": "examples/js/shaders/TriangleBlurShader.js"
+        },
+        "UnpackDepthRGBAShader.js": {
+            "path": "examples/js/shaders/UnpackDepthRGBAShader.js"
+        },
+        "VerticalBlurShader.js": {
+            "path": "examples/js/shaders/VerticalBlurShader.js"
+        },
+        "VerticalTiltShiftShader.js": {
+            "path": "examples/js/shaders/VerticalTiltShiftShader.js"
+        },
+        "VignetteShader.js": {
+            "path": "examples/js/shaders/VignetteShader.js"
+        },
+        "WaterRefractionShader.js": {
+            "path": "examples/js/shaders/WaterRefractionShader.js"
+        },
+        "ShaderSkin.js": {
+            "path": "examples/js/ShaderSkin.js"
+        },
+        "ShaderTerrain.js": {
+            "path": "examples/js/ShaderTerrain.js"
+        },
+        "ShaderToon.js": {
+            "path": "examples/js/ShaderToon.js"
+        },
+        "SimplexNoise.js": {
+            "path": "examples/js/SimplexNoise.js"
+        },
+        "TimelinerController.js": {
+            "path": "examples/js/TimelinerController.js"
+        },
+        "TypedArrayUtils.js": {
+            "path": "examples/js/TypedArrayUtils.js"
+        },
+        "UCSCharacter.js": {
+            "path": "examples/js/UCSCharacter.js"
+        },
+        "GeometryUtils.js": {
+            "path": "examples/js/utils/GeometryUtils.js"
+        },
+        "MathUtils.js": {
+            "path": "examples/js/utils/MathUtils.js"
+        },
+        "SceneUtils.js": {
+            "path": "examples/js/utils/SceneUtils.js"
+        },
+        "ShadowMapViewer.js": {
+            "path": "examples/js/utils/ShadowMapViewer.js"
+        },
+        "UVsDebug.js": {
+            "path": "examples/js/utils/UVsDebug.js"
+        },
+        "VolumeSlice.js": {
+            "path": "examples/js/VolumeSlice.js"
+        },
+        "DaydreamController.js": {
+            "path": "examples/js/vr/DaydreamController.js"
+        },
+        "GearVRController.js": {
+            "path": "examples/js/vr/GearVRController.js"
+        },
+        "PaintViveController.js": {
+            "path": "examples/js/vr/PaintViveController.js"
+        },
+        "ViveController.js": {
+            "path": "examples/js/vr/ViveController.js"
+        },
+        "WebVR.js": {
+            "path": "examples/js/vr/WebVR.js"
+        },
+        "OffscreenCanvas.js": {
+            "path": "examples/js/workers/OffscreenCanvas.js"
+        }
+    }
+}

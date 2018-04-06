@@ -4,12 +4,11 @@ var fs = require( 'fs' );
 var glob = require( 'glob' );
 var babel = require( 'babel-core' );
 
-
 var fixtures = glob.sync( 'fixtures/**/!(*.actual|*.expected).js', {
     cwd: __dirname
 } );
 
-// fixtures = fixtures.splice(0,1);
+fixtures = fixtures.splice(0,1);
 
 var pluginPath = path.resolve( __dirname, '../' );
 
@@ -28,7 +27,9 @@ var runTest = function( file ){
         return new Promise( ( resolve,reject )=>{
 
             babel.transformFile( source, {
-                plugins: [ pluginPath ]    
+                plugins: [ 
+                    pluginPath
+                ]
             }, ( err, result )=>{
     
                 if( err ){

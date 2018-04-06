@@ -1,20 +1,56 @@
 
+var fs = require( 'fs' );
+var pathUtil = require( 'path' );
+
 module.exports = function babelPluginThree( babel ){
 
     const t = babel.types;
 
-    console.log( 'STARTUP PLUGIN' );
-    // var three = require( 'three' );
-    // console.log( three );
+    // TODO: Passing in flag via env vars - couldn't see a decent way to pass in global flags to babel??
+    const BUILD_INDEX = process.env.BABEL_THREE_INDEX ? true : false;
+    const BUILD_INDEX_PATH = process.env.BABEL_THREE_INDEX_PATH;
+    const BUILD_INDEX_THREE_PATH = process.env.BABEL_THREE_PATH;
+
+    console.log( 'BUILD INDEX ', BUILD_INDEX );
+    console.log( 'PATH : ', BUILD_INDEX_PATH );
+    console.log( 'THREE PATH: ', BUILD_INDEX_THREE_PATH );
 
     return {
 
+        pre:( state )=>{
+
+            if( BUILD_INDEX && !this.indexMeta ){
+                this.indexMeta = {};
+            }                 
+
+        },
+        post: ( state )=>{
+
+            console.log( 'POST ', state.opts.filename );
+            var relativePath = state.opts.filename.replace( BUILD_INDEX_THREE_PATH, '' );
+            
+            if( relativePath[0] === pathUtil.sep ){
+                console.log( 'SPPLSDASD' );
+                relativePath = relativePath.slice(1);
+            }
+
+            console.log( relativePath );
+
+            if( BUILD_INDEX && this.indexMeta ){
+
+                // var index = JSON.parse( fs.readFileSync( BUILD_INDEX_PATH ) );
+                console.log( 'Write ', this.indexMeta.exports.length );
+
+            }
+
+        },
         visitor: {
 
             Program: {
 
                 enter: ( path, state )=>{
                     
+                    // console.log( 'STATE. ', state.opts );
                     state.pluginThree = {
                         imports: [],
                         exports: []
@@ -22,8 +58,6 @@ module.exports = function babelPluginThree( babel ){
 
                 },
                 exit: ( path, state )=>{
-
-                try{
 
                     let exports = [];
                     let exportDefault = null;
@@ -45,20 +79,20 @@ module.exports = function babelPluginThree( babel ){
                         }
                     } );
 
-                    imports = imports.map( ( im )=>{
+                    var importNodes = imports.map( ( im )=>{
                         return t.importSpecifier( t.identifier( im ), t.identifier( im ) );
                     });
 
-                    exports = exports.map( ( ex )=>{
+                    var exportNodes = exports.map( ( ex )=>{
                         return t.exportSpecifier( t.identifier( ex ), t.identifier( ex ) );                        
                     } );
 
                     path.unshiftContainer( 'body',
-                        t.importDeclaration( imports, t.stringLiteral( 'three' ) )
+                        t.importDeclaration( importNodes, t.stringLiteral( 'three' ) )
                     )              
 
                     path.pushContainer( 'body',
-                        t.exportNamedDeclaration( null, exports )
+                        t.exportNamedDeclaration( null, exportNodes )
                     )                                  
                     
                     if( exportDefault ){
@@ -67,10 +101,13 @@ module.exports = function babelPluginThree( babel ){
                         )
                     }
 
-
-                }catch( error ){
-                    console.log( error );
-                } 
+                    if( BUILD_INDEX ){
+                        this.indexMeta = {
+                            imports: imports,
+                            exports: exports,
+                            exportDefault: exportDefault
+                        }
+                    }
 
                 }
 
@@ -86,8 +123,8 @@ module.exports = function babelPluginThree( babel ){
 
                             const usage = path.parentPath.parentPath;
 
-                            console.log( 'Usage Node :', usage.type, Object.keys( usage.node ) );
-                            console.log( 'Parent Info', usage.parentPath.type, usage.parentPath.parentPath.type );
+                            // console.log( 'Usage Node :', usage.type, Object.keys( usage.node ) );
+                            // console.log( 'Parent Info', usage.parentPath.type, usage.parentPath.parentPath.type );
 
                             // This is essentially handling any top level THREE.OrbitControls = function(){...}
                             // declarations.  Converting them to exports
