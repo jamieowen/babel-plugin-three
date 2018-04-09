@@ -1,5 +1,3 @@
-import { LinearFilter, RGBAFormat, WebGLRenderTarget, CopyShader, ShaderPass, MaskPass, ClearMaskPass } from 'three';
-
 /**
  * @author alteredq / http://alteredqualia.com/
  */

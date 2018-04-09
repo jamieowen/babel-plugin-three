@@ -1,12 +1,19 @@
 
 var fs = require( 'fs' );
 var pathUtil = require( 'path' );
+var threeClassIndex;
+try{
+    threeClassIndex = require( './three-class-index' );
+}catch(error){
+
+}
 
 module.exports = function babelPluginThree( babel ){
 
     const t = babel.types;
 
     // TODO: Passing in flag via env vars - couldn't see a decent way to pass in global flags to babel??
+    // This is just to run the plugin to generate a class index of known example vs three.js build classes.
     const BUILD_INDEX = process.env.BABEL_THREE_INDEX ? true : false;
     const BUILD_INDEX_PATH = process.env.BABEL_THREE_INDEX_PATH;
     const BUILD_INDEX_THREE_PATH = process.env.BABEL_THREE_PATH;
@@ -75,23 +82,71 @@ module.exports = function babelPluginThree( babel ){
 
                     // TODO : Need to resolve imports to either three module or a local example file reference.
                     let imports = [];
+                    let threeImportNodes = [];
+                    let exampleImportNodes = [];
+
                     state.pluginThree.imports.forEach( (im)=>{
+
                         if( imports.indexOf(im) === -1 && exports.indexOf(im) === -1 && im !== exportDefault ){
+
                             imports.push( im );
+                            console.log( 'ok') ;
+                            console.log( threeClassIndex.three );
+                            console.log( 'OKO' );
+                            console.log( threeClassIndex.examplesClasses );
+                            console.log( 'Dijasda' );
+                            // use the pre built class index to resolve example dependencies
+                            if( !BUILD_INDEX && threeClassIndex ){
+
+                                if( threeClassIndex.three[ im ] ){
+                                    // threeImportNodes.push( 
+                                    //     t.importSpecifier( t.identifier( im ), t.identifier( im ) )
+                                    // );
+                                }else
+                                if( threeClassIndex.examplesClasses[ im ] ){
+                                    // exampleImportNodes.push( 
+                                    //     t.importDeclaration( 
+                                    //         [ t.importSpecifier( t.identifier( im ), t.identifier( im ) ) ], 
+                                    //         t.stringLiteral( threeClassIndex.examplesClasses[im] ) 
+                                    //     )
+                                    // )
+                                }else{
+                                    console.log( im );
+                                    throw new Error( `Problem resolving dependency ${im}` );
+                                }
+
+                            }else{                                
+                                threeImportNodes.push( 
+                                    t.importSpecifier( t.identifier( im ), t.identifier( im ) )
+                                );
+                            }
+                            
+                            
                         }
+
                     } );
 
-                    var importNodes = imports.map( ( im )=>{
-                        return t.importSpecifier( t.identifier( im ), t.identifier( im ) );
-                    });
+                    console.log( 'FOFOFO' );
+                    // var importNodes = imports.map( ( im )=>{
+                    //     return t.importSpecifier( t.identifier( im ), t.identifier( im ) );
+                    // });
 
-                    var exportNodes = exports.map( ( ex )=>{
+                    let exportNodes = exports.map( ( ex )=>{
                         return t.exportSpecifier( t.identifier( ex ), t.identifier( ex ) );                        
                     } );
 
-                    path.unshiftContainer( 'body',
-                        t.importDeclaration( importNodes, t.stringLiteral( 'three' ) )
-                    )              
+                    if( threeImportNodes.length ){
+                        path.unshiftContainer( 'body',
+                            t.importDeclaration( threeImportNodes, t.stringLiteral( 'three' ) )
+                        )   
+                    }
+
+                    if( exampleImportNodes.length ){
+                        exampleImportNodes.forEach( (node)=>{
+                            path.unshiftContainer( 'body', node );                     
+                        })
+                    }
+           
 
                     path.pushContainer( 'body',
                         t.exportNamedDeclaration( null, exportNodes )
