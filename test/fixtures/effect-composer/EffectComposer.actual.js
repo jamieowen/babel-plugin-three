@@ -1,7 +1,7 @@
-import { ClearMaskPass } from 'examples/js/postprocessing/MaskPass.js';
-import { MaskPass } from 'examples/js/postprocessing/MaskPass.js';
-import { ShaderPass } from 'examples/js/postprocessing/ShaderPass.js';
-import { CopyShader } from 'examples/js/shaders/CopyShader.js';
+import { ClearMaskPass } from 'three/examples/js/postprocessing/MaskPass.js';
+import { MaskPass } from 'three/examples/js/postprocessing/MaskPass.js';
+import { ShaderPass } from 'three/examples/js/postprocessing/ShaderPass.js';
+import { CopyShader } from 'three/examples/js/shaders/CopyShader.js';
 import { LinearFilter, RGBAFormat, WebGLRenderTarget } from 'three';
 
 /**

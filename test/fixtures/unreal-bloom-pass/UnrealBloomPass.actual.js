@@ -1,6 +1,6 @@
-import { CopyShader } from "examples/js/shaders/CopyShader.js";
-import { LuminosityHighPassShader } from "examples/js/shaders/LuminosityHighPassShader.js";
-import { Pass } from "examples/js/postprocessing/EffectComposer.js";
+import { CopyShader } from "three/examples/js/shaders/CopyShader.js";
+import { LuminosityHighPassShader } from "three/examples/js/shaders/LuminosityHighPassShader.js";
+import { Pass } from "three/examples/js/postprocessing/EffectComposer.js";
 import { Vector2, LinearFilter, RGBAFormat, WebGLRenderTarget, UniformsUtils, ShaderMaterial, Vector3, AdditiveBlending, Color, OrthographicCamera, Scene, MeshBasicMaterial, Mesh, PlaneBufferGeometry } from "three";
 
 /**
