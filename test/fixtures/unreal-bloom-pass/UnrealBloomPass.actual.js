@@ -1,4 +1,7 @@
-import { Pass, Vector2, LinearFilter, RGBAFormat, WebGLRenderTarget, LuminosityHighPassShader, UniformsUtils, ShaderMaterial, Vector3, CopyShader, AdditiveBlending, Color, OrthographicCamera, Scene, MeshBasicMaterial, Mesh, PlaneBufferGeometry } from "three";
+import { CopyShader } from "examples/js/shaders/CopyShader.js";
+import { LuminosityHighPassShader } from "examples/js/shaders/LuminosityHighPassShader.js";
+import { Pass } from "examples/js/postprocessing/EffectComposer.js";
+import { Vector2, LinearFilter, RGBAFormat, WebGLRenderTarget, UniformsUtils, ShaderMaterial, Vector3, AdditiveBlending, Color, OrthographicCamera, Scene, MeshBasicMaterial, Mesh, PlaneBufferGeometry } from "three";
 
 /**
  * @author spidersharma / http://eduperiment.com/

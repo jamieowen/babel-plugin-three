@@ -80,38 +80,37 @@ module.exports = function babelPluginThree( babel ){
                         }
                     });
 
-                    // TODO : Need to resolve imports to either three module or a local example file reference.
+                    /**
+                     * Using the three class index, resolve imports differently 
+                     * depending on their inclusion in either the three.js default build
+                     * or those existing in the examples folder.
+                     */
                     let imports = [];
                     let threeImportNodes = [];
                     let exampleImportNodes = [];
 
                     state.pluginThree.imports.forEach( (im)=>{
-
+                        
                         if( imports.indexOf(im) === -1 && exports.indexOf(im) === -1 && im !== exportDefault ){
 
                             imports.push( im );
-                            console.log( 'ok') ;
-                            console.log( threeClassIndex.three );
-                            console.log( 'OKO' );
-                            console.log( threeClassIndex.examplesClasses );
-                            console.log( 'Dijasda' );
-                            // use the pre built class index to resolve example dependencies
+
                             if( !BUILD_INDEX && threeClassIndex ){
 
                                 if( threeClassIndex.three[ im ] ){
-                                    // threeImportNodes.push( 
-                                    //     t.importSpecifier( t.identifier( im ), t.identifier( im ) )
-                                    // );
+                                    threeImportNodes.push( 
+                                        t.importSpecifier( t.identifier( im ), t.identifier( im ) )
+                                    );
                                 }else
                                 if( threeClassIndex.examplesClasses[ im ] ){
-                                    // exampleImportNodes.push( 
-                                    //     t.importDeclaration( 
-                                    //         [ t.importSpecifier( t.identifier( im ), t.identifier( im ) ) ], 
-                                    //         t.stringLiteral( threeClassIndex.examplesClasses[im] ) 
-                                    //     )
-                                    // )
+                                    exampleImportNodes.push( 
+                                        t.importDeclaration( 
+                                            [ t.importSpecifier( t.identifier( im ), t.identifier( im ) ) ], 
+                                            t.stringLiteral( threeClassIndex.examplesClasses[im] ) 
+                                        )
+                                    )
                                 }else{
-                                    console.log( im );
+                                    console.log( 'Error', im );
                                     throw new Error( `Problem resolving dependency ${im}` );
                                 }
 
@@ -179,19 +178,27 @@ module.exports = function babelPluginThree( babel ){
                         if( t.isMemberExpression( path.parentPath ) ){
 
                             const usage = path.parentPath.parentPath;
+                            const memberName = path.parentPath.node.property.name;
 
-                            // console.log( 'Usage Node :', usage.type, Object.keys( usage.node ) );
+                            console.log( 'Member Name :', memberName );
+                            console.log( 'Usage Node :', usage.type, Object.keys( usage.node ) );
+                            // console.log( 'Right Node :', usage.node.right );
                             // console.log( 'Parent Info', usage.parentPath.type, usage.parentPath.parentPath.type );
 
-                            // This is essentially handling any top level THREE.OrbitControls = function(){...}
-                            // declarations.  Converting them to exports
                             // TODO : There are some cases where an example is wrapped entirely in a self-executing function closure. ( i.e. TransformControls )
+
+                            /**
+                             * The first declaration case is the standard ES5 class function.
+                             * e.g. THREE.OrbitControls = function(){...}
+                             */
                             if( t.isProgram( usage.getFunctionParent() ) 
-                                && t.isFunctionExpression( usage.node.right )
+                                && ( t.isFunctionExpression( usage.node.right ) || t.isObjectExpression( usage.node.right ) )
                                 && t.isAssignmentExpression( usage ) 
                                 && t.isExpressionStatement( usage.parentPath ) 
                             ){
-                                                            
+                                                 
+                                console.log( `First case : ${memberName}`);
+
                                 state.pluginThree.exports.push( 
                                     path.parentPath.node.property.name
                                 );
@@ -210,7 +217,25 @@ module.exports = function babelPluginThree( babel ){
                                     console.log( err );
                                 }
 
+                            // }else
+                            // if( t.isProgram( usage.getFunctionParent() ) ){
+
+                            //     console.log( `>>>Second case : ${memberName}` );
+                            //     console.log( 'Right Node :', usage.node.right, usage.node.type );
+                            //     console.log( 'PATH', path.parentPath.node.type );
+
+                            //     console.log( 'CHECK' );
+                            //     console.log( t.isAssignmentExpression( usage ), t.isExpressionStatement( usage.parentPath ) );
+
                             }else{
+
+                                /**
+                                 * Treat everthing after as an import dependancy.
+                                 * Some export & import memberNames will be repeated, but
+                                 * these will be filtered out on ProgramNode.exit()
+                                 */
+
+                                console.log( `Treated as import :${memberName}` );
 
                                 state.pluginThree.imports.push( 
                                     path.parentPath.node.property.name

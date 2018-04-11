@@ -4,7 +4,10 @@
  * found as definitions in the examples folder.
  * 
  * This will launch the babel-three-plugin with additional env options which
- * will write 
+ * will write imports and exports to the src/three-class-index.json file.
+ * 
+ * It will need updating on each three.js version bump. But potentially can be ran from 
+ * a local node_modules folder.
  */
 var path = require( 'path' );
 var babel = require( 'babel-core' );

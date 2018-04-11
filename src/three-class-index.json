@@ -462,11 +462,11 @@
             ]
         },
         "examples/js/BufferGeometryUtils.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "BufferGeometryUtils"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "BufferGeometryUtils",
             "importsThree": [
                 "BufferAttribute",
                 "Vector3",
@@ -743,11 +743,11 @@
             ]
         },
         "examples/js/curves/NURBSUtils.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "NURBSUtils"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "NURBSUtils",
             "importsThree": [
                 "Vector4",
                 "Vector3"
@@ -1753,11 +1753,11 @@
             ]
         },
         "examples/js/loaders/LoaderSupport.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "LoaderSupport"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "LoaderSupport",
             "importsThree": [
                 "MeshStandardMaterial",
                 "VertexColors",
@@ -1898,12 +1898,13 @@
         },
         "examples/js/loaders/OBJLoader2.js": {
             "imports": [
-                "OBJLoader2",
                 "LoaderSupport",
                 "MTLLoader"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exports": [
+                "OBJLoader2"
+            ],
+            "exportDefault": "OBJLoader2",
             "importsThree": [
                 "DefaultLoadingManager",
                 "Group",
@@ -2161,21 +2162,20 @@
             ]
         },
         "examples/js/math/ColorConverter.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "ColorConverter"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "ColorConverter",
             "importsThree": [
                 "Math"
             ]
         },
         "examples/js/math/Lut.js": {
-            "imports": [
-                "ColorMapKeywords"
-            ],
+            "imports": [],
             "exports": [
-                "Lut"
+                "Lut",
+                "ColorMapKeywords"
             ],
             "exportDefault": "Lut",
             "importsThree": [
@@ -2735,7 +2735,6 @@
         },
         "examples/js/nodes/NodeLib.js": {
             "imports": [
-                "NodeLib",
                 "UVNode",
                 "PositionNode",
                 "NormalNode",
@@ -2743,8 +2742,10 @@
                 "ConstNode",
                 "FunctionNode"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exports": [
+                "NodeLib"
+            ],
+            "exportDefault": "NodeLib",
             "importsThree": []
         },
         "examples/js/nodes/NodeMaterial.js": {
@@ -3145,11 +3146,11 @@
             ]
         },
         "examples/js/ParametricGeometries.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "ParametricGeometries"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "ParametricGeometries",
             "importsThree": [
                 "Vector3",
                 "Object3D",
@@ -3852,15 +3853,15 @@
                 "RenderPass",
                 "EffectComposer",
                 "ShaderPass",
-                "ShaderDeferred",
                 "NoBlending",
                 "CopyShader",
-                "FXAAShader",
-                "ShaderDeferredCommon",
-                "DeferredShaderChunk"
+                "FXAAShader"
             ],
             "exports": [
-                "WebGLDeferredRenderer"
+                "WebGLDeferredRenderer",
+                "DeferredShaderChunk",
+                "ShaderDeferredCommon",
+                "ShaderDeferred"
             ],
             "exportDefault": "WebGLDeferredRenderer",
             "importsThree": [
@@ -3904,257 +3905,257 @@
             ]
         },
         "examples/js/ShaderGodRays.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "ShaderGodRays"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "ShaderGodRays",
             "importsThree": [
                 "Vector2",
                 "Color"
             ]
         },
         "examples/js/shaders/BasicShader.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "BasicShader"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "BasicShader",
             "importsThree": []
         },
         "examples/js/shaders/BleachBypassShader.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "BleachBypassShader"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "BleachBypassShader",
             "importsThree": []
         },
         "examples/js/shaders/BlendShader.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "BlendShader"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "BlendShader",
             "importsThree": []
         },
         "examples/js/shaders/BokehShader.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "BokehShader"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "BokehShader",
             "importsThree": []
         },
         "examples/js/shaders/BokehShader2.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "BokehShader"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "BokehShader",
             "importsThree": [
                 "Vector2"
             ]
         },
         "examples/js/shaders/BrightnessContrastShader.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "BrightnessContrastShader"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "BrightnessContrastShader",
             "importsThree": []
         },
         "examples/js/shaders/ColorCorrectionShader.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "ColorCorrectionShader"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "ColorCorrectionShader",
             "importsThree": [
                 "Vector3"
             ]
         },
         "examples/js/shaders/ColorifyShader.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "ColorifyShader"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "ColorifyShader",
             "importsThree": [
                 "Color"
             ]
         },
         "examples/js/shaders/ConvolutionShader.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "ConvolutionShader"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "ConvolutionShader",
             "importsThree": [
                 "Vector2"
             ]
         },
         "examples/js/shaders/CopyShader.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "CopyShader"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "CopyShader",
             "importsThree": []
         },
         "examples/js/shaders/DepthLimitedBlurShader.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "DepthLimitedBlurShader",
                 "BlurShaderUtils"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "DepthLimitedBlurShader",
             "importsThree": [
                 "Vector2"
             ]
         },
         "examples/js/shaders/DigitalGlitch.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "DigitalGlitch"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "DigitalGlitch",
             "importsThree": []
         },
         "examples/js/shaders/DOFMipMapShader.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "DOFMipMapShader"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "DOFMipMapShader",
             "importsThree": []
         },
         "examples/js/shaders/DotScreenShader.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "DotScreenShader"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "DotScreenShader",
             "importsThree": [
                 "Vector2"
             ]
         },
         "examples/js/shaders/FilmShader.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "FilmShader"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "FilmShader",
             "importsThree": []
         },
         "examples/js/shaders/FocusShader.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "FocusShader"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "FocusShader",
             "importsThree": []
         },
         "examples/js/shaders/FreiChenShader.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "FreiChenShader"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "FreiChenShader",
             "importsThree": [
                 "Vector2"
             ]
         },
         "examples/js/shaders/FresnelShader.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "FresnelShader"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "FresnelShader",
             "importsThree": []
         },
         "examples/js/shaders/FXAAShader.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "FXAAShader"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "FXAAShader",
             "importsThree": [
                 "Vector2"
             ]
         },
         "examples/js/shaders/GammaCorrectionShader.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "GammaCorrectionShader"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "GammaCorrectionShader",
             "importsThree": []
         },
         "examples/js/shaders/HorizontalBlurShader.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "HorizontalBlurShader"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "HorizontalBlurShader",
             "importsThree": []
         },
         "examples/js/shaders/HorizontalTiltShiftShader.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "HorizontalTiltShiftShader"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "HorizontalTiltShiftShader",
             "importsThree": []
         },
         "examples/js/shaders/HueSaturationShader.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "HueSaturationShader"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "HueSaturationShader",
             "importsThree": []
         },
         "examples/js/shaders/KaleidoShader.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "KaleidoShader"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "KaleidoShader",
             "importsThree": []
         },
         "examples/js/shaders/LuminosityHighPassShader.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "LuminosityHighPassShader"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "LuminosityHighPassShader",
             "importsThree": [
                 "Color"
             ]
         },
         "examples/js/shaders/LuminosityShader.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "LuminosityShader"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "LuminosityShader",
             "importsThree": []
         },
         "examples/js/shaders/MirrorShader.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "MirrorShader"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "MirrorShader",
             "importsThree": []
         },
         "examples/js/shaders/NormalMapShader.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "NormalMapShader"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "NormalMapShader",
             "importsThree": [
                 "Vector2"
             ]
@@ -4169,46 +4170,46 @@
             ]
         },
         "examples/js/shaders/ParallaxShader.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "ParallaxShader"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "ParallaxShader",
             "importsThree": []
         },
         "examples/js/shaders/PixelShader.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "PixelShader"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "PixelShader",
             "importsThree": []
         },
         "examples/js/shaders/RGBShiftShader.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "RGBShiftShader"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "RGBShiftShader",
             "importsThree": []
         },
         "examples/js/shaders/SAOShader.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "SAOShader"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "SAOShader",
             "importsThree": [
                 "Vector2",
                 "Matrix4"
             ]
         },
         "examples/js/shaders/SepiaShader.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "SepiaShader"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "SepiaShader",
             "importsThree": []
         },
         "examples/js/shaders/SMAAShader.js": {
@@ -4222,97 +4223,97 @@
             ]
         },
         "examples/js/shaders/SobelOperatorShader.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "SobelOperatorShader"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "SobelOperatorShader",
             "importsThree": [
                 "Vector2"
             ]
         },
         "examples/js/shaders/SSAOShader.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "SSAOShader"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "SSAOShader",
             "importsThree": [
                 "Vector2"
             ]
         },
         "examples/js/shaders/TechnicolorShader.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "TechnicolorShader"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "TechnicolorShader",
             "importsThree": []
         },
         "examples/js/shaders/ToneMapShader.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "ToneMapShader"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "ToneMapShader",
             "importsThree": []
         },
         "examples/js/shaders/TriangleBlurShader.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "TriangleBlurShader"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "TriangleBlurShader",
             "importsThree": [
                 "Vector2"
             ]
         },
         "examples/js/shaders/UnpackDepthRGBAShader.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "UnpackDepthRGBAShader"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "UnpackDepthRGBAShader",
             "importsThree": []
         },
         "examples/js/shaders/VerticalBlurShader.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "VerticalBlurShader"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "VerticalBlurShader",
             "importsThree": []
         },
         "examples/js/shaders/VerticalTiltShiftShader.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "VerticalTiltShiftShader"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "VerticalTiltShiftShader",
             "importsThree": []
         },
         "examples/js/shaders/VignetteShader.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "VignetteShader"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "VignetteShader",
             "importsThree": []
         },
         "examples/js/shaders/WaterRefractionShader.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "WaterRefractionShader"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "WaterRefractionShader",
             "importsThree": []
         },
         "examples/js/ShaderSkin.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "ShaderSkin"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "ShaderSkin",
             "importsThree": [
                 "UniformsUtils",
                 "UniformsLib",
@@ -4323,11 +4324,11 @@
             ]
         },
         "examples/js/ShaderTerrain.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "ShaderTerrain"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "ShaderTerrain",
             "importsThree": [
                 "UniformsUtils",
                 "UniformsLib",
@@ -4337,11 +4338,11 @@
             ]
         },
         "examples/js/ShaderToon.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "ShaderToon"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "ShaderToon",
             "importsThree": [
                 "Vector3",
                 "Color"
@@ -4367,11 +4368,11 @@
             ]
         },
         "examples/js/TypedArrayUtils.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "TypedArrayUtils"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "TypedArrayUtils",
             "importsThree": []
         },
         "examples/js/UCSCharacter.js": {
@@ -4392,28 +4393,30 @@
         },
         "examples/js/utils/GeometryUtils.js": {
             "imports": [],
-            "exports": [],
-            "exportDefault": null,
+            "exports": [
+                "GeometryUtils"
+            ],
+            "exportDefault": "GeometryUtils",
             "importsThree": [
-                "GeometryUtils",
                 "Mesh",
                 "Vector3"
             ]
         },
         "examples/js/utils/MathUtils.js": {
-            "imports": [
+            "imports": [],
+            "exports": [
                 "MathUtils"
             ],
-            "exports": [],
-            "exportDefault": null,
+            "exportDefault": "MathUtils",
             "importsThree": []
         },
         "examples/js/utils/SceneUtils.js": {
             "imports": [],
-            "exports": [],
-            "exportDefault": null,
+            "exports": [
+                "SceneUtils"
+            ],
+            "exportDefault": "SceneUtils",
             "importsThree": [
-                "SceneUtils",
                 "Group",
                 "Mesh",
                 "Matrix4"
@@ -4541,6 +4544,7 @@
         "MMDPhysics": "examples/js/animation/MMDPhysics.js",
         "MMDPhysicsHelper": "examples/js/animation/MMDPhysics.js",
         "AnimationClipCreator": "examples/js/AnimationClipCreator.js",
+        "BufferGeometryUtils": "examples/js/BufferGeometryUtils.js",
         "CinematicCamera": "examples/js/cameras/CinematicCamera.js",
         "Car": "examples/js/Car.js",
         "DeviceOrientationControls": "examples/js/controls/DeviceOrientationControls.js",
@@ -4556,6 +4560,7 @@
         "ConvexObjectBreaker": "examples/js/ConvexObjectBreaker.js",
         "NURBSCurve": "examples/js/curves/NURBSCurve.js",
         "NURBSSurface": "examples/js/curves/NURBSSurface.js",
+        "NURBSUtils": "examples/js/curves/NURBSUtils.js",
         "AnaglyphEffect": "examples/js/effects/AnaglyphEffect.js",
         "AsciiEffect": "examples/js/effects/AsciiEffect.js",
         "OutlineEffect": "examples/js/effects/OutlineEffect.js",
@@ -4596,6 +4601,7 @@
         "HDRCubeTextureLoader": "examples/js/loaders/HDRCubeTextureLoader.js",
         "KMZLoader": "examples/js/loaders/KMZLoader.js",
         "KTXLoader": "examples/js/loaders/KTXLoader.js",
+        "LoaderSupport": "examples/js/loaders/LoaderSupport.js",
         "MD2Loader": "examples/js/loaders/MD2Loader.js",
         "MMDLoader": "examples/js/loaders/MMDLoader.js",
         "MMDAudioManager": "examples/js/loaders/MMDLoader.js",
@@ -4603,6 +4609,7 @@
         "MMDHelper": "examples/js/loaders/MMDLoader.js",
         "MTLLoader": "examples/js/loaders/MTLLoader.js",
         "NRRDLoader": "examples/js/loaders/NRRDLoader.js",
+        "OBJLoader2": "examples/js/loaders/OBJLoader2.js",
         "PCDLoader": "examples/js/loaders/PCDLoader.js",
         "PDBLoader": "examples/js/loaders/PDBLoader.js",
         "PlayCanvasLoader": "examples/js/loaders/PlayCanvasLoader.js",
@@ -4617,7 +4624,9 @@
         "VRMLLoader": "examples/js/loaders/VRMLLoader.js",
         "VTKLoader": "examples/js/loaders/VTKLoader.js",
         "MarchingCubes": "examples/js/MarchingCubes.js",
+        "ColorConverter": "examples/js/math/ColorConverter.js",
         "Lut": "examples/js/math/Lut.js",
+        "ColorMapKeywords": "examples/js/math/Lut.js",
         "MD2Character": "examples/js/MD2Character.js",
         "MD2CharacterComplex": "examples/js/MD2CharacterComplex.js",
         "BufferSubdivisionModifier": "examples/js/modifiers/BufferSubdivisionModifier.js",
@@ -4665,6 +4674,7 @@
         "OperatorNode": "examples/js/nodes/math/OperatorNode.js",
         "NodeBuilder": "examples/js/nodes/NodeBuilder.js",
         "NodeFrame": "examples/js/nodes/NodeFrame.js",
+        "NodeLib": "examples/js/nodes/NodeLib.js",
         "NodeMaterial": "examples/js/nodes/NodeMaterial.js",
         "NodePass": "examples/js/nodes/postprocessing/NodePass.js",
         "RawNode": "examples/js/nodes/RawNode.js",
@@ -4692,6 +4702,7 @@
         "Sky": "examples/js/objects/Sky.js",
         "Water": "examples/js/objects/Water2.js",
         "Ocean": "examples/js/Ocean.js",
+        "ParametricGeometries": "examples/js/ParametricGeometries.js",
         "PMREMCubeUVPacker": "examples/js/pmrem/PMREMCubeUVPacker.js",
         "PMREMGenerator": "examples/js/pmrem/PMREMGenerator.js",
         "AdaptiveToneMappingPass": "examples/js/postprocessing/AdaptiveToneMappingPass.js",
@@ -4736,8 +4747,62 @@
         "SVGObject": "examples/js/renderers/SVGRenderer.js",
         "SVGRenderer": "examples/js/renderers/SVGRenderer.js",
         "WebGLDeferredRenderer": "examples/js/renderers/WebGLDeferredRenderer.js",
+        "DeferredShaderChunk": "examples/js/renderers/WebGLDeferredRenderer.js",
+        "ShaderDeferredCommon": "examples/js/renderers/WebGLDeferredRenderer.js",
+        "ShaderDeferred": "examples/js/renderers/WebGLDeferredRenderer.js",
+        "ShaderGodRays": "examples/js/ShaderGodRays.js",
+        "BasicShader": "examples/js/shaders/BasicShader.js",
+        "BleachBypassShader": "examples/js/shaders/BleachBypassShader.js",
+        "BlendShader": "examples/js/shaders/BlendShader.js",
+        "BokehShader": "examples/js/shaders/BokehShader2.js",
+        "BrightnessContrastShader": "examples/js/shaders/BrightnessContrastShader.js",
+        "ColorCorrectionShader": "examples/js/shaders/ColorCorrectionShader.js",
+        "ColorifyShader": "examples/js/shaders/ColorifyShader.js",
+        "ConvolutionShader": "examples/js/shaders/ConvolutionShader.js",
+        "CopyShader": "examples/js/shaders/CopyShader.js",
+        "DepthLimitedBlurShader": "examples/js/shaders/DepthLimitedBlurShader.js",
+        "BlurShaderUtils": "examples/js/shaders/DepthLimitedBlurShader.js",
+        "DigitalGlitch": "examples/js/shaders/DigitalGlitch.js",
+        "DOFMipMapShader": "examples/js/shaders/DOFMipMapShader.js",
+        "DotScreenShader": "examples/js/shaders/DotScreenShader.js",
+        "FilmShader": "examples/js/shaders/FilmShader.js",
+        "FocusShader": "examples/js/shaders/FocusShader.js",
+        "FreiChenShader": "examples/js/shaders/FreiChenShader.js",
+        "FresnelShader": "examples/js/shaders/FresnelShader.js",
+        "FXAAShader": "examples/js/shaders/FXAAShader.js",
+        "GammaCorrectionShader": "examples/js/shaders/GammaCorrectionShader.js",
+        "HorizontalBlurShader": "examples/js/shaders/HorizontalBlurShader.js",
+        "HorizontalTiltShiftShader": "examples/js/shaders/HorizontalTiltShiftShader.js",
+        "HueSaturationShader": "examples/js/shaders/HueSaturationShader.js",
+        "KaleidoShader": "examples/js/shaders/KaleidoShader.js",
+        "LuminosityHighPassShader": "examples/js/shaders/LuminosityHighPassShader.js",
+        "LuminosityShader": "examples/js/shaders/LuminosityShader.js",
+        "MirrorShader": "examples/js/shaders/MirrorShader.js",
+        "NormalMapShader": "examples/js/shaders/NormalMapShader.js",
+        "ParallaxShader": "examples/js/shaders/ParallaxShader.js",
+        "PixelShader": "examples/js/shaders/PixelShader.js",
+        "RGBShiftShader": "examples/js/shaders/RGBShiftShader.js",
+        "SAOShader": "examples/js/shaders/SAOShader.js",
+        "SepiaShader": "examples/js/shaders/SepiaShader.js",
+        "SobelOperatorShader": "examples/js/shaders/SobelOperatorShader.js",
+        "SSAOShader": "examples/js/shaders/SSAOShader.js",
+        "TechnicolorShader": "examples/js/shaders/TechnicolorShader.js",
+        "ToneMapShader": "examples/js/shaders/ToneMapShader.js",
+        "TriangleBlurShader": "examples/js/shaders/TriangleBlurShader.js",
+        "UnpackDepthRGBAShader": "examples/js/shaders/UnpackDepthRGBAShader.js",
+        "VerticalBlurShader": "examples/js/shaders/VerticalBlurShader.js",
+        "VerticalTiltShiftShader": "examples/js/shaders/VerticalTiltShiftShader.js",
+        "VignetteShader": "examples/js/shaders/VignetteShader.js",
+        "WaterRefractionShader": "examples/js/shaders/WaterRefractionShader.js",
+        "ShaderSkin": "examples/js/ShaderSkin.js",
+        "ShaderTerrain": "examples/js/ShaderTerrain.js",
+        "ShaderToon": "examples/js/ShaderToon.js",
         "TimelinerController": "examples/js/TimelinerController.js",
+        "TypedArrayUtils": "examples/js/TypedArrayUtils.js",
         "UCSCharacter": "examples/js/UCSCharacter.js",
+        "GeometryUtils": "examples/js/utils/GeometryUtils.js",
+        "MathUtils": "examples/js/utils/MathUtils.js",
+        "SceneUtils": "examples/js/utils/SceneUtils.js",
         "ShadowMapViewer": "examples/js/utils/ShadowMapViewer.js",
         "UVsDebug": "examples/js/utils/UVsDebug.js",
         "VolumeSlice": "examples/js/VolumeSlice.js",

@@ -7,7 +7,8 @@
   },
   "scripts": {
     "test": "node test/runner.js",
-    "update-fixtures": "node test/update-fixtures"
+    "update-fixtures": "node test/update-fixtures",
+    "build-index": "node scripts/build-three-class-index"
   },
   "repository": {
     "type": "git",

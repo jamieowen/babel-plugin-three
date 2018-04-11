@@ -8,11 +8,9 @@ var fixtures = glob.sync( 'fixtures/**/!(*.actual|*.expected).js', {
     cwd: __dirname
 } );
 
-fixtures = fixtures.splice(0,1);
+// fixtures = fixtures.splice(0,1);
 
 var pluginPath = path.resolve( __dirname, '../' );
-
-console.log( 'PluginPath ', pluginPath );
 
 var runTest = function( file ){
 
@@ -26,6 +24,8 @@ var runTest = function( file ){
 
         return new Promise( ( resolve,reject )=>{
 
+            console.log( '>>>>>', file );
+            
             babel.transformFile( source, {
                 plugins: [ 
                     pluginPath
@@ -67,7 +67,7 @@ var runTest = function( file ){
 
         // Compare expected.
 
-        console.log( 'Compare' );
+        console.log( 'Compare', file );        
 
     })
     
@@ -96,7 +96,7 @@ var step = ()=>{
 
 var done = ()=>{
 
-    console.log( 'done' );
+    console.log( 'Done...' );
 
 }
 

@@ -14,7 +14,11 @@ var fixtures = [
     '/three.js/examples/js/controls/OrbitControls.js',
     '/three.js/examples/js/controls/TransformControls.js',
     '/three.js/examples/js/postprocessing/EffectComposer.js',
-    '/three.js/examples/js/postprocessing/UnrealBloomPass.js'
+    '/three.js/examples/js/postprocessing/UnrealBloomPass.js',
+    '/three.js/examples/js/shaders/CopyShader.js',
+    '/three.js/examples/js/shaders/FXAAShader.js',
+    '/three.js/examples/js/shaders/LuminosityHighPassShader.js'
+
 ];
 
 fixtures.forEach( ( example )=>{

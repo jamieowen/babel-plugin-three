@@ -1,3 +1,9 @@
+import { ClearMaskPass } from 'examples/js/postprocessing/MaskPass.js';
+import { MaskPass } from 'examples/js/postprocessing/MaskPass.js';
+import { ShaderPass } from 'examples/js/postprocessing/ShaderPass.js';
+import { CopyShader } from 'examples/js/shaders/CopyShader.js';
+import { LinearFilter, RGBAFormat, WebGLRenderTarget } from 'three';
+
 /**
  * @author alteredq / http://alteredqualia.com/
  */
