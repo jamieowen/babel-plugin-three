@@ -2,6 +2,7 @@
 var fs = require( 'fs' );
 var pathUtil = require( 'path' );
 var threeClassIndex;
+
 try{
     threeClassIndex = require( './three-class-index' );
 }catch(error){
@@ -18,9 +19,9 @@ module.exports = function babelPluginThree( babel ){
     const BUILD_INDEX_PATH = process.env.BABEL_THREE_INDEX_PATH;
     const BUILD_INDEX_THREE_PATH = process.env.BABEL_THREE_PATH;
 
-    console.log( 'BUILD INDEX ', BUILD_INDEX );
-    console.log( 'PATH : ', BUILD_INDEX_PATH );
-    console.log( 'THREE PATH: ', BUILD_INDEX_THREE_PATH );
+    // console.log( 'BUILD INDEX ', BUILD_INDEX );
+    // console.log( 'PATH : ', BUILD_INDEX_PATH );
+    // console.log( 'THREE PATH: ', BUILD_INDEX_THREE_PATH );
 
     return {
 
@@ -174,7 +175,7 @@ module.exports = function babelPluginThree( babel ){
                      * 
                      * There are some cases where an example is wrapped entirely in a self-executing function closure. 
                      * e.g. TransformControls.
-                     * In this case, we can replace the ExpressionStatement with the node of the BlockStatement body.
+                     * In this case, we can replace the ExpressionStatement with the array of nodes of the BlockStatement body.
                      * 
                      * ( function(){
                      * 
@@ -222,7 +223,6 @@ module.exports = function babelPluginThree( babel ){
                             // console.log( 'Right Node :', usage.node.right );
                             // console.log( 'Parent Info', usage.parentPath.type, usage.parentPath.parentPath.type );
 
-
                             /**
                              * 
                              * The first declaration case is the standard ES5 class function, 
@@ -242,20 +242,14 @@ module.exports = function babelPluginThree( babel ){
 
                                 state.pluginThree.exports.push( memberName );
                                 
-                                try{                                    
-                                    // Produces strange output when replacing the AssignmentExpression, so replace the ExpressionStatement.
-                                    // https://github.com/babel/babel/issues/5072
-                                    usage.parentPath.replaceWith( 
-                                            t.variableDeclaration( "const", [
-                                                t.variableDeclarator( 
-                                                    t.identifier( memberName ),usage.node.right
-                                                )
-                                            ] )
-                                    )
-                                }catch( err ){
-                                    console.log( err );
-                                    throw err;
-                                }
+                                // https://github.com/babel/babel/issues/5072
+                                usage.parentPath.replaceWith( 
+                                    t.variableDeclaration( "const", [
+                                        t.variableDeclarator( 
+                                            t.identifier( memberName ),usage.node.right
+                                        )
+                                    ])
+                                );
 
                             }else{
 
