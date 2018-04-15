@@ -16,10 +16,12 @@ const registerExampleRequest = function( htmlUrl, scriptSrcs, compiledJsUrl ){
 }
 
 const isHandledSourceFile = function( scriptUrl ){
-
+    
     return threeClassIndex.examplesPaths[ scriptUrl ] !== undefined;
 
 }
+
+// const transform = function( )
 
 
 const transpileJavascript = interceptor( function( req,res ){
@@ -34,14 +36,15 @@ const transpileJavascript = interceptor( function( req,res ){
 
             console.log( 'Send Compiled JS' );
             const source = `
-            window.alert( 'hello there :${req.url}' );
+            // window.alert( 'hello there :${req.url}' );
             `
             res.set({
                 'Content-Type': 'application/javascript'
             })
                 
-            res.send( source );
-            // send( source );
+            res.status( 200 );
+            // res.send( source );
+            send( source );
             
 
         }

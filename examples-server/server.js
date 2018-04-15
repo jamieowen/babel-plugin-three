@@ -12,8 +12,8 @@ const app = express();
 const httpRoot = path.join( __dirname, '..', 'three.js' );
 
 app.use( transformHtml );
-app.use( express.static( httpRoot ) );
 app.use( transpileJavascript );
+app.use( express.static( httpRoot ) );
 
 app.listen( 3000, ()=>{
 
