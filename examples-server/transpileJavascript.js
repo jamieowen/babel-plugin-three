@@ -2,14 +2,17 @@ const babel = require( 'babel-core' );
 const cheerio = require( 'cheerio' );
 const interceptor = require( 'express-interceptor' );
 const threeClassIndex = require( '../src/three-class-index' );
+const path = require( 'path' );
+const webpackBundle = require( './webpackBundle' );
 
 const exampleRequests = {};
 
-const registerExampleRequest = function( htmlUrl, scriptSrcs, compiledJsUrl ){
+const registerExampleRequest = function( htmlUrl, scriptSrcs, transpiledJsUrl ){
     
-    console.log( htmlUrl, compiledJsUrl );
-    exampleRequests[ compiledJsUrl ] = {
-        // examplePath: examplePath,
+    console.log( htmlUrl, transpiledJsUrl );
+    exampleRequests[ transpiledJsUrl ] = {
+        transpiledJsUrl: transpiledJsUrl,
+        scriptSrcs: scriptSrcs,
         source: null
     }
 
@@ -21,7 +24,36 @@ const isHandledSourceFile = function( scriptUrl ){
 
 }
 
-// const transform = function( )
+const threePath = '../three.js/'
+const createEntrySource = function( scriptSrcs ){
+
+    const info = scriptSrcs.map( (src)=>{
+        return threeClassIndex.examplesPaths[src];
+    });
+
+    const imports = info.map( (entry,i)=>{
+
+        return entry.exports.map((ex)=>{
+            return `import {${ex}} from "${ threePath + scriptSrcs[i].replace('.js','')}";`;
+        }).join('\n');
+
+    })
+
+    const memberDeclarations = info.map( (entry,i)=>{
+
+        return entry.exports.map((ex)=>{
+            return `THREE.${ex} = ${ex};`;
+        }).join('\n');
+
+    })
+
+    const source = `
+        ${imports.join('\n')}
+        ${memberDeclarations.join('\n')}
+    `
+
+    return source;
+}
 
 
 const transpileJavascript = interceptor( function( req,res ){
@@ -35,17 +67,19 @@ const transpileJavascript = interceptor( function( req,res ){
         intercept: function( body,send ){
 
             console.log( 'Send Compiled JS' );
-            const source = `
-            // window.alert( 'hello there :${req.url}' );
-            `
-            res.set({
-                'Content-Type': 'application/javascript'
-            })
+            const cache = exampleRequests[ req.url ];
+
+            if( !cache.source ){
                 
+                const bundled = webpackBundle( createEntrySource( cache.scriptSrcs ) );
+                cache.source = bundled.source;
+
+            }
+
+            res.set({ 'Content-Type': 'application/javascript' });                
             res.status( 200 );
-            // res.send( source );
-            send( source );
-            
+
+            send( cache.source );            
 
         }
     }

@@ -30,10 +30,14 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
     "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
     "cheerio": "^1.0.0-rc.2",
     "express": "^4.16.3",
     "fs-extra": "^5.0.0",
-    "glob": "^7.1.2"
+    "glob": "^7.1.2",
+    "val-loader": "^1.1.0",
+    "webpack": "^4.5.0"
   }
 }

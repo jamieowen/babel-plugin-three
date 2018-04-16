@@ -23,6 +23,20 @@ module.exports = function babelPluginThree( babel ){
     // console.log( 'PATH : ', BUILD_INDEX_PATH );
     // console.log( 'THREE PATH: ', BUILD_INDEX_THREE_PATH );
 
+    /**
+     * If this filename path is a three.js examples path and should be transformed.
+     * 
+     * @param {*} path 
+     */
+    const isThreeExampleFilePath = ( filename )=>{
+        
+        // A bit of a hack here. Need to updated to check module is within three.js module.
+        // Or we could do a look up in the threeClassIndex.
+        return filename.indexOf( '/test/fixtures/' ) >= 0 ||
+            filename.indexOf( '/examples/js/' ) >= 0
+
+    }
+
     return {
 
         pre:( state )=>{
@@ -60,6 +74,10 @@ module.exports = function babelPluginThree( babel ){
 
                 enter: ( path, state )=>{
                     
+                    if( !isThreeExampleFilePath( state.file.opts.filename ) ){
+                        path.stop();
+                    }
+
                     state.pluginThree = {
                         imports: [],
                         exports: []
