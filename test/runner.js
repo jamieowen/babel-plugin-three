@@ -69,6 +69,10 @@ var runTest = function( file ){
 
         console.log( 'Compare', file );        
 
+    }).catch( ( err )=>{
+
+        console.log( 'Error', err );
+        
     })
     
 }

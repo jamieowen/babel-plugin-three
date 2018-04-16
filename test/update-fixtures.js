@@ -17,9 +17,14 @@ var fixtures = [
     '/three.js/examples/js/postprocessing/UnrealBloomPass.js',
     '/three.js/examples/js/shaders/CopyShader.js',
     '/three.js/examples/js/shaders/FXAAShader.js',
-    '/three.js/examples/js/shaders/LuminosityHighPassShader.js'
+    '/three.js/examples/js/shaders/LuminosityHighPassShader.js',
+    '/three.js/examples/js/loaders/OBJLoader.js'
 
 ];
+
+const isUpperCase = function( s ){
+    return s.toUpperCase() === s;
+}
 
 fixtures.forEach( ( example )=>{
 
@@ -27,7 +32,34 @@ fixtures.forEach( ( example )=>{
 
     var filename = example.split( '/' );
     filename = filename[ filename.length - 1 ]; 
-    var folder = filename.replace( '.js', '' ).match(/[A-Z][a-z]+/g).join( '-' ).toLowerCase();
+    
+    var folderPrepName = filename;
+    // fix cases like FXAAShader resulting in just "shader" folder name.
+    if( isUpperCase(filename[0]) && isUpperCase(filename[1] ) ){
+        var lastUpper = -1;
+        var chars = folderPrepName.split( '' ).map( (c,i)=>{
+            if( isUpperCase(c) && i === 0 ){
+                lastUpper = i;
+                return c;
+            }else
+            if( isUpperCase(c) && lastUpper === i-1 ){
+                lastUpper = i;
+                if( i < folderPrepName.length-1 && !isUpperCase( folderPrepName[i+1] ) ){
+                    return c;
+                }else{
+                    return c.toLowerCase();
+                }
+                
+            }else{
+                return c;
+            }
+        })
+        console.log( 'CHANGED :', chars.join('') );
+        folderPrepName = chars.join('');
+    }
+
+    var folder = folderPrepName.replace( '.js', '' ).match(/[A-Z][a-z]+/g).join( '-' ).toLowerCase();
+    
 
     var outputFolder = path.join( __dirname, 'fixtures', folder );
     var outputFile = path.join( outputFolder, filename );

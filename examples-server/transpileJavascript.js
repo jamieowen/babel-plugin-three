@@ -5,87 +5,92 @@ const threeClassIndex = require( '../src/three-class-index' );
 const path = require( 'path' );
 const webpackBundle = require( './webpackBundle' );
 
-const exampleRequests = {};
 
-const registerExampleRequest = function( htmlUrl, scriptSrcs, transpiledJsUrl ){
-    
-    console.log( htmlUrl, transpiledJsUrl );
-    exampleRequests[ transpiledJsUrl ] = {
-        transpiledJsUrl: transpiledJsUrl,
-        scriptSrcs: scriptSrcs,
-        source: null
-    }
 
-}
-
+/**
+ * Check if the .js file is used ( and compiled into ) the examples class index.
+ * @param {*} scriptUrl 
+ */
 const isHandledSourceFile = function( scriptUrl ){
     
     return threeClassIndex.examplesPaths[ scriptUrl ] !== undefined;
 
 }
 
-const threePath = '../three.js/'
-const createEntrySource = function( scriptSrcs ){
+const registeredUrls = {};
+/**
+ * 
+ * Called from transformHtml.js.
+ * 
+ * When a http request is made to an example.html file.
+ * The html is parsed for script tags and passed here.
+ * 
+ * This enables the Router to handle the next expected incoming .js file
+ * request from the modified example html.
+ * 
+ * @param {*} htmlUrl 
+ * @param {*} exampleSrcPaths 
+ * @param {*} url 
+ */
+const createTranspiledExampleUrl = function( exampleUrl, url, exampleSrcPaths ){
+    
+    registeredUrls[ url ] = { url, exampleSrcPaths, exampleUrl }
 
-    const info = scriptSrcs.map( (src)=>{
-        return threeClassIndex.examplesPaths[src];
-    });
-
-    const imports = info.map( (entry,i)=>{
-
-        return entry.exports.map((ex)=>{
-            return `import {${ex}} from "${ threePath + scriptSrcs[i].replace('.js','')}";`;
-        }).join('\n');
-
-    })
-
-    const memberDeclarations = info.map( (entry,i)=>{
-
-        return entry.exports.map((ex)=>{
-            return `THREE.${ex} = ${ex};`;
-        }).join('\n');
-
-    })
-
-    const source = `
-        ${imports.join('\n')}
-        ${memberDeclarations.join('\n')}
-    `
-
-    return source;
 }
 
 
+/**
+ * Middleware for handling registered urls.
+ */
 const transpileJavascript = interceptor( function( req,res ){
     
     return {
 
         isInterceptable: function(){
-            return exampleRequests[ req.url ] !== undefined;
+            return registeredUrls[ req.url ] !== undefined;
         },
 
         intercept: function( body,send ){
 
             console.log( 'Send Compiled JS' );
-            const cache = exampleRequests[ req.url ];
+            const registered = registeredUrls[ req.url ];
 
-            if( !cache.source ){
-                
-                const bundled = webpackBundle( createEntrySource( cache.scriptSrcs ) );
-                cache.source = bundled.source;
+            if( registered ){
+            
+                webpackBundle( registered.url, registered.exampleSrcPaths )
+                    .then( ( source )=>{
+
+                        // Have to set status code, 
+                        // I think the static file middleware was sending a 404 due to the file being dynamic and no router handling it.                        
+                        res.status( 200 ); 
+                        res.set({ 'Content-Type': 'application/javascript' });     
+                        send( source );
+                        console.log( 'Compile Success..' );
+
+                    })
+                    .catch( ( error )=>{
+
+                        if( error.errors ){
+                            console.log( error.errors );
+                        }
+                        res.status( 404 );
+                        send();
+
+                    })
+
+            }else{
+
+                res.status( 404 );
+                send();
 
             }
 
-            res.set({ 'Content-Type': 'application/javascript' });                
-            res.status( 200 );
-
-            send( cache.source );            
-
         }
+
     }
 
 })
 
 module.exports = transpileJavascript;
-module.exports.registerExampleRequest = registerExampleRequest;
+module.exports.createTranspiledExampleUrl = createTranspiledExampleUrl;
 module.exports.isHandledSourceFile = isHandledSourceFile;

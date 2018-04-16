@@ -1,56 +1,93 @@
-
 const webpack = require( 'webpack' );
 const path = require( 'path' );
-const pluginPath = path.resolve( __dirname, '../' );
+const createEntrySource = require( './createEntrySource' );
+const valLoader = require( 'val-loader' );
 const MemoryFS = require( 'memory-fs' );
-const { ResolverFactory } = require('enhanced-resolve');
 
-const memfs = new MemoryFS();
+const pluginPath = path.resolve( __dirname, '../' );
 
-const EntrySourceResolver = ResolverFactory.createResolver({
-    fileSystem: memfs,
-    extensions: ['.js.memory' ]
-});
+const fs = new MemoryFS();
+
+module.exports = function( jsUrl, exampleSrcPaths ){
+
+    return new Promise( ( resolve,reject )=>{
+
+        const outputFilename = jsUrl.replace( /\//g, '_' );
+
+        // Todo: Cache Result?
+
+        const compiler = webpack({
+
+            mode: 'development',
+            entry: {
+                app: require.resolve( './createEntrySource' )
+            },  
+            output: {
+                path: '/',
+                filename: outputFilename
+            },
+            plugins: [],
+            module: {
+                rules: [
+                    { 
+                        test: require.resolve( './createEntrySource' ),
+                        use: [ { 
+                            loader: 'val-loader',
+                            options: {
+                                exampleSrcPaths: exampleSrcPaths
+                            }
+                        } ]
+                    },
+                    {
+                        test: /\.js$/,
+                        exclude: /(node_modules|bower_components)/,
+                        use: {
+                            loader: 'babel-loader',
+                            options: {
+                                presets: ['@babel/preset-env'],
+                                plugins: [ 
+
+                                    // [ pluginPath, {} ],
+                                    [ 'module-resolver', {
+                                        root: '../',
+                                        alias: {
+                                            three: './three.js'
+                                        }
+                                    } ]
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        });
+        
+        console.log( Object.keys( compiler ) );
+        compiler.outputFileSystem = fs;
+
+        compiler.run( (err, stats) => {
+
+            if( err || stats.hasErrors() ) {
+
+                console.log( 'Webpack error.' );
+
+                if( stats ){
+                    console.log( 'Error ', stats.compilation.errors );
+                    reject( stats.compilation.errors );
+                }else{
+                    reject( err );
+                }
+
+            }else{
+
+                resolve( fs.readFileSync( '/' + outputFilename, 'utf-8' ) );
+                
+            }
+
+        });
 
 
-module.exports = function( entrySource ){
-
-    console.log( 'WebPack :', entrySource );
-
-    // https://github.com/webpack-contrib/val-loader
-
-    // memfs.writeFileSync( 'entry.js', entrySource, 'utf-8' );
-    const entryPlugin = new EntrySourcePlugin();
-
-    const compiler = webpack({
-        entry: {
-            app: 'entry.js.memory'
-        },  
-        output: {
-            path: '/',
-            filename: 'output.js'
-        },
-        plugins: [
-            entryPlugin
-        ]
-    });
-
-    // compiler.inputFileSystem = fs;
-    // compiler.outputFileSystem = fs;
-    // compiler.resolvers.normal.fileSystem = fs;
-    // compiler.resolvers.context.fileSystem = fs;
-
-    compiler.run( (err, stats) => {
-
-        if (err || stats.hasErrors()) {
-            // Handle errors here
-            console.log( 'ERROR', err, Object.keys( stats ) );
-        }
-        // Done processing
-        console.log( 'Done...' );
-
-    });
-
-    return '';
+    })
+    
 
 }

@@ -47,7 +47,7 @@ const transformHtml = interceptor( function( req,res ){
             const willTranspile = toTranspile.length > 0;
             if( willTranspile ){
 
-                transpiler.registerExampleRequest( req.url, toTranspile, transpiledJsUrl );
+                transpiler.createTranspiledExampleUrl( req.url, transpiledJsUrl, toTranspile );
                 document( `<script src="${transpiledJsUrl}"></script>` ).insertAfter( 'script[src="../build/three.js"]' );
 
             }
