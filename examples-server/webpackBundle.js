@@ -49,7 +49,7 @@ module.exports = function( jsUrl, exampleSrcPaths ){
 
                                     // [ pluginPath, {} ],
                                     [ 'module-resolver', {
-                                        root: '../',
+                                        root: [ '../' ],
                                         alias: {
                                             three: './three.js'
                                         }
