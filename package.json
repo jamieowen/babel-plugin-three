@@ -1,5 +1,5 @@
 {
-  "name": "babel-plugin-three-examples",
+  "name": "babel-plugin-three",
   "version": "1.0.0",
   "main": "src/index.js",
   "directories": {
@@ -22,13 +22,13 @@
   },
   "homepage": "https://github.com/jamieowen/babel-plugin-three-examples#readme",
   "description": "",
-  "dependencies": {
-    "@babel/core": "^7.0.0-beta.44",
-    "babel-runtime": "^6.26.0",
-    "chalk": "^2.3.2",
-    "express-interceptor": "^1.2.0"
+  "dependencies": {    
+    "babel-runtime": "^6.26.0"
   },
   "devDependencies": {
+    "chalk": "^2.3.2",
+    "express-interceptor": "^1.2.0",
+    "@babel/core": "^7.0.0-beta.44",
     "@babel/preset-env": "^7.0.0-beta.44",
     "babel-cli": "^6.26.0",
     "babel-loader": "^8.0.0-beta",
