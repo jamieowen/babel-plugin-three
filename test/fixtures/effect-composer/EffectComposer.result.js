@@ -8,7 +8,7 @@ import { LinearFilter, RGBAFormat, WebGLRenderTarget } from 'three';
  * @author alteredq / http://alteredqualia.com/
  */
 
-const EffectComposer = function (renderer, renderTarget) {
+var EffectComposer = function (renderer, renderTarget) {
 
 	this.renderer = renderer;
 
@@ -149,7 +149,7 @@ Object.assign(EffectComposer.prototype, {
 
 });
 
-const Pass = function () {
+var Pass = function () {
 
 	// if set to true, the pass is processed by the composer
 	this.enabled = true;

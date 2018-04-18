@@ -9,7 +9,8 @@
     "test": "node test/runner.js",
     "update-fixtures": "node test/update-fixtures",
     "build-index": "node scripts/build-three-class-index",
-    "server": "nodemon examples-server"
+    "server": "nodemon examples-server",
+    "demo-effectscomposer": "webpack-dev-server --config demo/webpack.config.js --open"
   },
   "repository": {
     "type": "git",
@@ -22,24 +23,27 @@
   },
   "homepage": "https://github.com/jamieowen/babel-plugin-three-examples#readme",
   "description": "",
-  "dependencies": {    
+  "dependencies": {
     "babel-runtime": "^6.26.0"
   },
   "devDependencies": {
-    "chalk": "^2.3.2",
-    "express-interceptor": "^1.2.0",
     "@babel/core": "^7.0.0-beta.44",
     "@babel/preset-env": "^7.0.0-beta.44",
     "babel-cli": "^6.26.0",
     "babel-loader": "^8.0.0-beta",
     "babel-plugin-module-resolver": "^3.1.1",
     "babel-plugin-transform-runtime": "^6.23.0",
+    "chalk": "^2.3.2",
     "cheerio": "^1.0.0-rc.2",
     "express": "^4.16.3",
+    "express-interceptor": "^1.2.0",
     "fs-extra": "^5.0.0",
     "glob": "^7.1.2",
+    "html-webpack-plugin": "^3.2.0",
     "memory-fs": "^0.4.1",
     "val-loader": "^1.1.0",
-    "webpack": "^4.5.0"
+    "webpack": "^4.5.0",
+    "webpack-cli": "^2.0.14",
+    "webpack-dev-server": "^3.1.3"
   }
 }

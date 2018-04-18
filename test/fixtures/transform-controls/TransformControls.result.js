@@ -67,7 +67,7 @@ GizmoLineMaterial.prototype.constructor = GizmoLineMaterial;
 
 var pickerMaterial = new GizmoMaterial({ visible: false, transparent: false });
 
-const TransformGizmo = function () {
+var TransformGizmo = function () {
 
 	this.init = function () {
 
@@ -188,7 +188,7 @@ TransformGizmo.prototype.update = function (rotation, eye) {
 	});
 };
 
-const TransformGizmoTranslate = function () {
+var TransformGizmoTranslate = function () {
 
 	TransformGizmo.call(this);
 
@@ -285,7 +285,7 @@ const TransformGizmoTranslate = function () {
 TransformGizmoTranslate.prototype = Object.create(TransformGizmo.prototype);
 TransformGizmoTranslate.prototype.constructor = TransformGizmoTranslate;
 
-const TransformGizmoRotate = function () {
+var TransformGizmoRotate = function () {
 
 	TransformGizmo.call(this);
 
@@ -400,7 +400,7 @@ const TransformGizmoRotate = function () {
 TransformGizmoRotate.prototype = Object.create(TransformGizmo.prototype);
 TransformGizmoRotate.prototype.constructor = TransformGizmoRotate;
 
-const TransformGizmoScale = function () {
+var TransformGizmoScale = function () {
 
 	TransformGizmo.call(this);
 
@@ -476,7 +476,7 @@ const TransformGizmoScale = function () {
 TransformGizmoScale.prototype = Object.create(TransformGizmo.prototype);
 TransformGizmoScale.prototype.constructor = TransformGizmoScale;
 
-const TransformControls = function (camera, domElement) {
+var TransformControls = function (camera, domElement) {
 
 	// TODO: Make non-uniform scale and rotate play nice in hierarchies
 	// TODO: ADD RXYZ contol

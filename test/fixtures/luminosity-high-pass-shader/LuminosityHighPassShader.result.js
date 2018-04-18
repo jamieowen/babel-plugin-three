@@ -6,7 +6,7 @@ import { Color } from "three";
  * http://en.wikipedia.org/wiki/Luminosity
  */
 
-const LuminosityHighPassShader = {
+var LuminosityHighPassShader = {
 
 		shaderID: "luminosityHighPass",
 

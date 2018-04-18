@@ -13,6 +13,7 @@ module.exports = function babelPluginThree( babel ){
 
     const t = babel.types;
 
+    console.log( 'Babel Plugin Three' );
     // TODO: Passing in flag via env vars - couldn't see a decent way to pass in global flags to babel??
     // This is just to run the plugin to generate a class index of known example vs three.js build classes.
     const BUILD_INDEX = process.env.BABEL_THREE_INDEX ? true : false;
@@ -262,7 +263,7 @@ module.exports = function babelPluginThree( babel ){
                                 
                                 // https://github.com/babel/babel/issues/5072
                                 usage.parentPath.replaceWith( 
-                                    t.variableDeclaration( "const", [
+                                    t.variableDeclaration( "var", [
                                         t.variableDeclarator( 
                                             t.identifier( memberName ),usage.node.right
                                         )

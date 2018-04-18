@@ -4,7 +4,7 @@ var fs = require( 'fs' );
 var glob = require( 'glob' );
 var babel = require( 'babel-core' );
 
-var fixtures = glob.sync( 'fixtures/**/!(*.actual|*.expected).js', {
+var fixtures = glob.sync( 'fixtures/**/!(*.result|*.expected).js', {
     cwd: __dirname
 } );
 
@@ -16,7 +16,7 @@ var runTest = function( file ){
 
     const source = path.resolve( 'test', file );
     const expected = path.resolve( 'test', file.replace( '.js', '.expected.js' ) );
-    const actual = path.resolve( 'test', file.replace( '.js', '.actual.js' ) );
+    const result = path.resolve( 'test', file.replace( '.js', '.result.js' ) );
 
     return Promise.resolve().then( ()=>{
 
@@ -49,7 +49,7 @@ var runTest = function( file ){
 
         return new Promise( ( resolve,reject )=>{
 
-            fs.writeFile( actual.toString(), ast.code, {
+            fs.writeFile( result.toString(), ast.code, {
                 encoding: 'utf8' 
             }, ( err,res )=>{
 

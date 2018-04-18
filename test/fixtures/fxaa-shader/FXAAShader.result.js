@@ -9,7 +9,7 @@ import { Vector2 } from "three";
  * http://www.glge.org/demos/fxaa/
  */
 
-const FXAAShader = {
+var FXAAShader = {
 
   uniforms: {
 

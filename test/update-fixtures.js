@@ -18,7 +18,8 @@ var fixtures = [
     '/three.js/examples/js/shaders/CopyShader.js',
     '/three.js/examples/js/shaders/FXAAShader.js',
     '/three.js/examples/js/shaders/LuminosityHighPassShader.js',
-    '/three.js/examples/js/loaders/OBJLoader.js'
+    '/three.js/examples/js/loaders/OBJLoader.js',
+    '/three.js/examples/js/postprocessing/MaskPass.js'
 
 ];
 
@@ -34,7 +35,7 @@ fixtures.forEach( ( example )=>{
     filename = filename[ filename.length - 1 ]; 
     
     var folderPrepName = filename;
-    // fix cases like FXAAShader resulting in just "shader" folder name.
+    // fix cases like FXAAShader resulting in just "shader" folder name. So FXAAShader = fxaa-shader.
     if( isUpperCase(filename[0]) && isUpperCase(filename[1] ) ){
         var lastUpper = -1;
         var chars = folderPrepName.split( '' ).map( (c,i)=>{
@@ -54,7 +55,6 @@ fixtures.forEach( ( example )=>{
                 return c;
             }
         })
-        console.log( 'CHANGED :', chars.join('') );
         folderPrepName = chars.join('');
     }
 

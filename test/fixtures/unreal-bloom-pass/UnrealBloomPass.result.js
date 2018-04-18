@@ -9,7 +9,7 @@ import { Vector2, LinearFilter, RGBAFormat, WebGLRenderTarget, UniformsUtils, Sh
  * Inspired from Unreal Engine
  * https://docs.unrealengine.com/latest/INT/Engine/Rendering/PostProcessEffects/Bloom/
  */
-const UnrealBloomPass = function (resolution, strength, radius, threshold) {
+var UnrealBloomPass = function (resolution, strength, radius, threshold) {
 
 	Pass.call(this);
 
