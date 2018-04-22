@@ -77,6 +77,10 @@ module.exports = function babelPluginThree( babel ){
                     
                     if( !isThreeExampleFilePath( state.file.opts.filename ) ){
                         path.stop();
+                    }else{
+                        console.log( 'babel-three-plugin: Should process..' );
+                        console.log( state.file.opts.filename );
+                        console.log( '' );
                     }
 
                     state.pluginThree = {
