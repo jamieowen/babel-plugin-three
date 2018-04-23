@@ -9,9 +9,13 @@ import {
     HemisphereLight
 } from 'three';
 
+// import Composer from './inherit-test/TestComposer';
+
 import { EffectsComposer } from 'three/examples/js/postprocessing/EffectComposer';
 
 window.onload = ()=>{
+
+    // const test = new Composer();
 
     const renderer = new WebGLRenderer({
         antialias: true

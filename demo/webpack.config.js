@@ -43,7 +43,9 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['@babel/preset-env'],
+                        presets: [
+                            [ '@babel/preset-env', { loose: true } ]
+                        ],
                         plugins: [                                                        
                             [ 'module-resolver', moduleResolverOpts, 'pass-1' ], // required to resolve three to three.js gitsubmodule. ( no module resolution is needed in regular 'three' npm install )
                             [ babelPluginThree, {} ],
